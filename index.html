@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  
+
   <title>Realitní makléř Praha | Ing. Minh Tu Pham | Vietnamská a česká komunita</title>
   <meta name="description" content="Profesionální realitní makléř a finanční poradce v Praze. Pomáháme vietnamské i české komunitě najít bydlení, zajistit investice, úvěry a pojištění." />
   <meta name="keywords" content="realitní makléř, Praha, vietnamská komunita, finanční poradce, investice, úvěr, pojištění" />
   <meta name="robots" content="index, follow" />
 
-  <!-- Schema.org JSON-LD -->
+  <!-- Schema.org JSON-LD pro lepší SEO -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -103,6 +103,20 @@
       display: block;
     }
 
+    /* FAQ styl */
+    .faq-item {
+      margin-bottom: 15px;
+    }
+    .faq-question {
+      font-weight: bold;
+      cursor: pointer;
+      color: #004d99;
+    }
+    .faq-answer {
+      display: none;
+      margin-top: 5px;
+    }
+
     @media (max-width: 600px) {
       .container {
         padding: 20px;
@@ -114,6 +128,23 @@
       }
     }
   </style>
+
+  <script>
+    // Jednoduchý skript pro FAQ toggle
+    document.addEventListener('DOMContentLoaded', () => {
+      const faqs = document.querySelectorAll('.faq-question');
+      faqs.forEach(q => {
+        q.addEventListener('click', () => {
+          const answer = q.nextElementSibling;
+          if (answer.style.display === 'block') {
+            answer.style.display = 'none';
+          } else {
+            answer.style.display = 'block';
+          }
+        });
+      });
+    });
+  </script>
 </head>
 <body>
   <div class="container">
@@ -144,7 +175,7 @@
       <h2>📞 Kontakt | Liên hệ</h2>
       <p><strong>Tel:</strong> <a href="tel:+420778081986">778 081 986</a></p>
       <p><strong>Email:</strong> <a href="mailto:tu.pham@kwcz.cz">tu.pham@kwcz.cz</a></p>
-      <p><strong>Web:</strong> <a href="https://www.nnmm.cz" target="_blank">www.nnmm.cz</a></p>
+      <p><strong>Web:</strong> <a href="https://www.nnmm.cz" target="_blank" rel="noopener noreferrer">www.nnmm.cz</a></p>
     </div>
 
     <div class="section">
@@ -152,7 +183,7 @@
       <p><strong>5. patro, budova 7 pater, vedle Quán Đông Đô – OC SAPA, Praha 4</strong><br>
         <em>Tầng 5, tòa nhà 7 tầng, cạnh quán Đông Đô – Trung tâm SAPA, Praha 4</em></p>
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2561.2139523459215!2d14.492232615718068!3d50.03054817942115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b943ab55759f7%3A0x3b00750a48f62e8a!2sSAPA!5e0!3m2!1scs!2scz!4v1719840000000!5m2!1scs!2scz"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2448.405120518309!2d14.46463181581746!3d50.001691499139056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b912303bb8fc3%3A0xa057b93346dc5ccf!2sIng.%20Pham%20Minh%20Tu%20Reality!5e0!3m2!1scs!2scz!4v1719840000000!5m2!1scs!2scz"
         allowfullscreen=""
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
@@ -169,6 +200,22 @@
         alt="QR kód kompletní kontakty"
         class="qr-code"
       >
+    </div>
+
+    <div class="section">
+      <h2>❓ Často kladené otázky | Câu hỏi thường gặp</h2>
+      <div class="faq-item">
+        <div class="faq-question">Jak mi pomůžete najít nové bydlení? / Làm thế nào để bạn giúp tôi tìm nhà mới?</div>
+        <div class="faq-answer">Pomáháme najít byty, domy či komerční prostory, zajistíme prohlídky a poradíme s financováním.<br>Chúng tôi giúp tìm căn hộ, nhà hoặc mặt bằng kinh doanh, tổ chức xem nhà và tư vấn tài chính.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Jaké služby nabízíte jako finanční poradce? / Bạn cung cấp dịch vụ tư vấn tài chính nào?</div>
+        <div class="faq-answer">Poradíme s investicemi, úvěry, hypotékami a různými druhy pojištění.<br>Chúng tôi tư vấn đầu tư, vay vốn, thế chấp và các loại bảo hiểm.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Jak mohu kontaktovat Ing. Minh Tu Pham? / Làm sao để liên hệ với Ing. Minh Tu Pham?</div>
+        <div class="faq-answer">Telefonicky na čísle 778 081 986, emailem na tu.pham@kwcz.cz nebo přes web www.nnmm.cz.<br>Bạn có thể gọi điện 778 081 986, gửi email tu.pham@kwcz.cz hoặc truy cập web www.nnmm.cz.</div>
+      </div>
     </div>
 
     <div class="section" style="text-align:center;">
