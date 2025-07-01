@@ -3,238 +3,130 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Realitní makléř Praha | Ing. Minh Tu Pham | Vietnamská a česká komunita</title>
-  <meta name="description" content="Profesionální realitní makléř a finanční poradce v Praze. Pomáháme vietnamské i české komunitě najít bydlení, zajistit investice, úvěry a pojištění." />
-  <meta name="keywords" content="realitní makléř, Praha, vietnamská komunita, finanční poradce, investice, úvěr, pojištění" />
+  <title>Realitní makléř Praha | Ing. Minh Tu Pham</title>
+  <meta name="description" content="Profesionální realitní makléř pro českou a vietnamskou komunitu v Praze. Pomoc s nemovitostmi, hypotékou a finančním poradenstvím." />
+  <meta name="keywords" content="realitní makléř Praha, vietnamská komunita, finanční poradce, nemovitosti SAPA, hypotéky, pojištění" />
   <meta name="robots" content="index, follow" />
-    <link rel="icon" type="image/png" href="/https://pham.cz/static/img/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/https://pham.cz/static/img/favicon.svg" />
-<link rel="shortcut icon" href="/https://pham.cz/static/img/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/https://pham.cz/static/img/apple-touch-icon.png" />
-<link rel="manifest" href="/https://pham.cz/static/img/site.webmanifest" />
+  <link rel="canonical" href="https://www.nnmm.cz" />
+  <link rel="icon" href="https://pham.cz/static/img/favicon-96x96.png" type="image/png" />
+  <link rel="apple-touch-icon" href="https://pham.cz/static/img/apple-touch-icon.png" />
+  <link rel="manifest" href="https://pham.cz/static/img/site.webmanifest" />
 
-  <!-- Schema.org JSON-LD pro lepší SEO -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
+    "@type": "RealEstateAgent",
     "name": "Ing. Minh Tu Pham",
-    "jobTitle": "Realitní makléř, Finanční poradce",
+    "image": "https://nnmm.cz/static/img/1tu.jpg",
     "telephone": "+420778081986",
     "email": "tu.pham@kwcz.cz",
     "url": "https://www.nnmm.cz",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "5. patro, budova 7 pater, vedle restaurace Đông Đô – OC SAPA",
+      "streetAddress": "OC SAPA, 5. patro, vedle restaurace Đông Đô",
       "addressLocality": "Praha 4",
+      "postalCode": "14000",
       "addressCountry": "CZ"
     },
-    "image": "https://nnmm.cz/static/img/1tu.jpg"
+    "areaServed": ["Praha", "Česká republika"],
+    "languages": ["cs", "vi"]
   }
   </script>
 
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-      background: #f2f2f2;
-      color: #333;
+    body { font-family: Arial, sans-serif; margin: 0; background: #f9f9f9; color: #333; }
+    .slogan-banner {
+      background-color: #004d99; color: white; text-align: center;
+      padding: 15px 20px; font-size: 1.2em;
     }
-
+    .lang-switcher { text-align: center; margin: 10px 0; }
+    .lang-switcher button {
+      font-size: 1em; padding: 8px 14px; margin: 4px;
+      border: none; border-radius: 5px;
+      background-color: #ddd; cursor: pointer;
+    }
+    .lang-switcher button.active {
+      background-color: #004d99; color: white;
+    }
     .container {
-      max-width: 800px;
-      margin: 40px auto;
-      background: white;
-      padding: 30px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
-      border-radius: 12px;
-    }
-
-    .profile-img {
-      width: 160px;
-      height: 160px;
-      object-fit: cover;
-      border-radius: 50%;
-      display: block;
-      margin: 0 auto 20px auto;
-      border: 4px solid #b30000;
-    }
-
-    h1 {
-      text-align: center;
-      color: #b30000;
-    }
-
-    h2 {
-      margin-top: 40px;
-      color: #004d99;
-    }
-
-    .section {
-      margin-bottom: 30px;
-    }
-
-    .contact {
-      font-weight: bold;
-    }
-
-    .lang {
-      margin-top: 10px;
-    }
-
-    iframe {
-      width: 100%;
-      height: 300px;
-      border: none;
+      max-width: 800px; margin: 20px auto; background: white;
+      padding: 25px; box-shadow: 0 0 10px rgba(0,0,0,0.05);
       border-radius: 10px;
     }
-
-    ul {
-      padding-left: 20px;
+    h1 { text-align: center; color: #b30000; }
+    h2 { color: #004d99; margin-top: 30px; }
+    .profile-img {
+      width: 150px; height: 150px; object-fit: cover;
+      border-radius: 50%; border: 4px solid #b30000;
+      margin: 0 auto 20px; display: block;
     }
-
-    li {
-      margin-bottom: 10px;
-    }
-
-    img.qr-code {
+    ul { padding-left: 20px; }
+    .qr-code {
+      display: block; margin: 20px auto;
+      max-width: 200px; border-radius: 8px;
       border: 1px solid #ccc;
-      border-radius: 8px;
-      max-width: 200px;
-      margin: 20px auto 0;
-      display: block;
     }
-
-    /* FAQ styl */
-    .faq-item {
-      margin-bottom: 15px;
+    footer {
+      text-align: center; font-size: 0.9em; color: #666;
+      margin-top: 40px; padding: 15px 0;
     }
-    .faq-question {
-      font-weight: bold;
-      cursor: pointer;
-      color: #004d99;
-    }
-    .faq-answer {
-      display: none;
-      margin-top: 5px;
-    }
-
-    @media (max-width: 600px) {
-      .container {
-        padding: 20px;
-      }
-
-      .profile-img {
-        width: 120px;
-        height: 120px;
-      }
-    }
+    .lang { display: none; }
   </style>
 
   <script>
-    // Jednoduchý skript pro FAQ toggle
-    document.addEventListener('DOMContentLoaded', () => {
-      const faqs = document.querySelectorAll('.faq-question');
-      faqs.forEach(q => {
-        q.addEventListener('click', () => {
-          const answer = q.nextElementSibling;
-          if (answer.style.display === 'block') {
-            answer.style.display = 'none';
-          } else {
-            answer.style.display = 'block';
-          }
-        });
+    function setLanguage(lang) {
+      document.querySelectorAll('.lang').forEach(el => {
+        el.style.display = el.classList.contains(lang) ? 'block' : 'none';
       });
+      document.getElementById('btn-cz').classList.toggle('active', lang === 'cz');
+      document.getElementById('btn-vn').classList.toggle('active', lang === 'vn');
+      localStorage.setItem('preferredLang', lang);
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      const saved = localStorage.getItem('preferredLang') || 'cz';
+      setLanguage(saved);
     });
   </script>
 </head>
 <body>
-  <div class="container">
-    <img src="https://nnmm.cz/static/img/1tu.jpg" alt="Minh Tu Pham" class="profile-img" />
-    <h1>Ing. Minh Tu Pham</h1>
-    <p style="text-align:center;"><strong>Realitní makléř | Finanční poradce</strong><br><em>Chuyên viên môi giới bất động sản | Tư vấn tài chính</em></p>
-
-    <div class="section lang">
-      <h2>🇨🇿🇻🇳 Služby | Dịch vụ</h2>
-      <p><strong>Pomáháme lidem z vietnamské i české komunity s prodejem, pronájmem a hledáním nového bydlení.</strong><br>
-        <em>Chúng tôi hỗ trợ cộng đồng người Việt và người Séc trong việc bán, cho thuê và tìm nhà ở mới.</em></p>
-
-      <p><strong>Působíme jako realitní makléři v České republice. Specializujeme se na:</strong><br>
-        <em>Chúng tôi hoạt động như các chuyên viên môi giới bất động sản tại Cộng hòa Séc. Chúng tôi chuyên về:</em></p>
-
-      <ul>
-        <li><strong>Prodej a pronájem nemovitostí</strong><br><em>Mua bán và cho thuê bất động sản</em></li>
-        <li><strong>Finanční poradenství pro investice</strong><br><em>Tư vấn tài chính cho đầu tư</em></li>
-        <li><strong>Zajištění hypotečních úvěrů a financování</strong><br><em>Hỗ trợ vay thế chấp và tài trợ tài chính</em></li>
-        <li><strong>Životní, majetkové a podnikatelské pojištění</strong><br><em>Bảo hiểm nhân thọ, tài sản và doanh nghiệp</em></li>
-      </ul>
-
-      <p><strong>Vaše bezpečí, majetek i budoucnost jsou pro nás na prvním místě.</strong><br>
-        <em>An toàn, tài sản và tương lai của bạn luôn là ưu tiên hàng đầu của chúng tôi.</em></p>
-      
-      <p><em>Ngoài ra chúng tôi còn tư vấn mua bán ngoại tệ, gửi tiền về VN hoặc gửi từ VN sang CZ, giải trình nguồn tiền đúng để mua bán BĐS.</em></p>
-    </div>
-
-    <div class="section contact">
-      <h2>📞 Kontakt | Liên hệ</h2>
-      <p><strong>Tel:</strong> <a href="tel:+420778081986">778 081 986</a></p>
-      <p><strong>Email:</strong> <a href="mailto:tu.pham@kwcz.cz">tu.pham@kwcz.cz</a></p>
-      <p><strong>Web:</strong> <a href="https://www.nnmm.cz" target="_blank" rel="noopener noreferrer">www.nnmm.cz</a></p>
-    </div>
-
-    <div class="section">
-      <h2>🏢 Kancelář | Văn phòng</h2>
-      <p><strong>5. patro, budova 7 pater, vedle restaurace Đông Đô – OC SAPA, Praha 4</strong><br>
-        <em>Tầng 5, tòa nhà 7 tầng, cạnh nhà hàng Đông Đô – Trung tâm SAPA, Praha 4</em></p>
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2448.405120518309!2d14.46463181581746!3d50.001691499139056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b912303bb8fc3%3A0xa057b93346dc5ccf!2sIng.%20Pham%20Minh%20Tu%20Reality!5e0!3m2!1scs!2scz!4v1719840000000!5m2!1scs!2scz"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        title="Mapa kanceláře Ing. Minh Tu Pham, OC SAPA, Praha 4">
-      </iframe>
-    </div>
-
-    <div class="section" style="text-align:center;">
-      <h2>🔗 QR kód s kompletními kontakty</h2>
-      <p><strong>Naskenujte pro uložení telefonu, emailu i webu do svého telefonu.</strong><br>
-         <em>Quét mã QR để lưu số điện thoại, email và trang web vào điện thoại của bạn.</em></p>
-      <img
-        src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=BEGIN%3AVCARD%0AVERSION%3A3.0%0AFN%3AIng.%20Minh%20Tu%20Pham%0ATEL%3BTYPE%3DWORK%2CVOICE%3A%2B420778081986%0AEMAIL%3BTYPE%3DPREF%2CINTERNET%3Atu.pham%40kwcz.cz%0AURL%3Ahttps%3A%2F%2Fwww.nnmm.cz%0AEND%3AVCARD"
-        alt="QR kód kompletní kontakty"
-        class="qr-code"
-      >
-    </div>
-
-    <div class="section">
-      <h2>❓ Často kladené otázky | Câu hỏi thường gặp</h2>
-      <div class="faq-item">
-        <div class="faq-question">Jak mi pomůžete prodat svůj dům, byt a nebo najít nové bydlení? / Bạn sẽ giúp tôi bán nhà, căn hộ hoặc tìm nơi ở mới như thế nào?</div>
-        <div class="faq-answer">Pomáháme vám prodat dům, byt nebo jinou nemovitost rychle a výhodně, zároveň pomáháme najít nové bydlení, zajistíme prohlídky a poradíme s financováním.<br>Chúng tôi giúp bạn bán nhà, căn hộ hoặc bất động sản khác một cách nhanh chóng và có lợi, đồng thời hỗ trợ tìm chỗ ở mới, tổ chức xem nhà và tư vấn tài chính.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">Jaké služby nabízíte jako finanční poradce? / Bạn cung cấp dịch vụ tư vấn tài chính nào?</div>
-        <div class="faq-answer">Poradíme s investicemi, úvěry, hypotékami a různými druhy pojištění.<br>Chúng tôi tư vấn đầu tư, vay vốn, thế chấp và các loại bảo hiểm. Ngoài ra chúng tôi còn tư vấn mua bán ngoại tệ, gửi tiền về VN hoặc gửi từ VN sang CZ, giải trình nguồn tiền dùng để mua bán BĐS.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">Jak mohu kontaktovat Ing. Minh Tu Pham? / Làm sao để liên hệ với Ing. Phạm Minh Tứ?</div>
-        <div class="faq-answer">Telefonicky na čísle 778 081 986, emailem na tu.pham@kwcz.cz nebo přes web www.nnmm.cz.<br>Bạn có thể gọi điện 778 081 986, gửi email tu.pham@kwcz.cz hoặc truy cập web www.nnmm.cz.</div>
-      </div>
-    </div>
-
-    <div class="section" style="text-align:center;">
-      <p><strong>Spojme se a najděme nejlepší řešení pro vaši budoucnost.</strong><br>
-         <em>Hãy kết nối với chúng tôi để tìm ra giải pháp tốt nhất cho tương lai của bạn.</em></p>
-      <p><strong>Společně vybudujeme bezpečný a prosperující život.</strong><br>
-         <em>Cùng nhau xây dựng cuộc sống an toàn và thịnh vượng.</em></p>
-    </div>
+  <div class="slogan-banner">
+    <p class="lang cz"><strong>Spojme se a najděme nejlepší řešení pro vaši budoucnost.</strong></p>
+    <p class="lang vn"><strong>Hãy kết nối với chúng tôi để tìm ra giải pháp tốt nhất cho tương lai của bạn.</strong></p>
   </div>
-      <footer style="text-align:center; margin-top: 40px; font-size: 0.9em; color: #666;">
-      <p><strong>MINH TU PHAM, IČO: 66473721</strong></p>
-      <p>Sídlo: Praha, Česká republika</p>
-    </footer>
 
-</body>
-</html>
+  <div class="lang-switcher">
+    <button onclick="setLanguage('cz')" id="btn-cz">🇨🇿 Čeština</button>
+    <button onclick="setLanguage('vn')" id="btn-vn">🇻🇳 Tiếng Việt</button>
+  </div>
+
+  <div class="container">
+    <img src="https://nnmm.cz/static/img/1tu.jpg" alt="Profilová fotografie Minh Tu Pham" class="profile-img" loading="lazy" />
+    <h1 class="lang cz">Ing. Minh Tu Pham</h1>
+    <h1 class="lang vn">Kỹ sư Phạm Minh Tứ</h1>
+    <p class="lang cz" style="text-align:center;">Realitní makléř | Finanční poradce</p>
+    <p class="lang vn" style="text-align:center;">Chuyên viên môi giới bất động sản | Tư vấn tài chính</p>
+
+    <h2 class="lang cz">Služby</h2>
+    <h2 class="lang vn">Dịch vụ</h2>
+    <ul>
+      <li><span class="lang cz">Prodej a pronájem nemovitostí</span><span class="lang vn">Mua bán và cho thuê bất động sản</span></li>
+      <li><span class="lang cz">Finanční poradenství pro investice</span><span class="lang vn">Tư vấn tài chính cho đầu tư</span></li>
+      <li><span class="lang cz">Zajištění hypotečních úvěrů</span><span class="lang vn">Hỗ trợ vay thế chấp</span></li>
+      <li><span class="lang cz">Pojištění: životní, majetkové a podnikatelské</span><span class="lang vn">Bảo hiểm: nhân thọ, tài sản và doanh nghiệp</span></li>
+    </ul>
+
+    <h2 class="lang cz">Kontakt</h2>
+    <h2 class="lang vn">Liên hệ</h2>
+    <p><strong>Tel:</strong> <a href="tel:+420778081986">+420 778 081 986</a></p>
+    <p><strong>Email:</strong> <a href="mailto:tu.pham@kwcz.cz">tu.pham@kwcz.cz</a></p>
+    <p><strong>Web:</strong> <a href="https://www.nnmm.cz" target="_blank" rel="noopener noreferrer">www.nnmm.cz</a></p>
+
+    <h2 class="lang cz">Kancelář</h2>
+    <h2 class="lang vn">Văn phòng</h2>
+    <p class="lang cz">5. patro, vedle restaurace Đông Đô – OC SAPA, Praha 4</p>
+    <p class="lang vn">Tầng 5, cạnh nhà hàng Đông Đô – Trung tâm SAPA, Praha 4</p>
+
+    <h2>🔗 QR kód</h2>
+    <p class="lang cz">Naskenujte pro uložení kontaktů</p>
+    <p class="lang vn">Quét mã QR để lưu thông tin liên hệ</p>
+    <img class="qr-code" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=BEGIN:VCARD%0AVERSION:3.0%0AFN:Ing. Minh Tu Pham%0ATEL:+420778081986%0AEMAIL:tu.pham@kwcz.cz%0AURL:https://www.nnmm.cz%0AEND:VCARD" alt="QR kód kontaktu Minh Tu Pham
