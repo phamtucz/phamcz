@@ -121,6 +121,11 @@
     <span data-lang="vn">Cung cấp dịch vụ tư vấn pháp lý và kinh doanh trọn gói: từ mua lại, sáp nhập, chuyển nhượng cho đến giải thể doanh nghiệp</span>
   </li>
 </ul>
+  <select id="languageSelector" onchange="switchLanguage()">
+    <option value="vn">Tiếng Việt</option>
+    <option value="cz">Čeština</option>
+  </select>
+
   <h2 data-lang="vn">Bảng tính lãi suất</h2>
   <h2 data-lang="cz">Kalkulačka složeného úroku</h2>
 
@@ -160,16 +165,7 @@
       }
 
       const language = document.getElementById("languageSelector").value;
-const years = n / 12 | 0;
-
-const texts = {
-  vi: `Sau ${years} năm: tổng số tiền là ${total.toFixed(2)} EUR`,
-  cz: `Za ${years} let: celková částka je ${total.toFixed(2)} EUR`,
-};
-
-// Ví dụ: hiển thị tiếng Việt nếu ngôn ngữ đang chọn là 'vi'
-const lang = 'vi'; // hoặc 'cz'
-const resultText = texts[lang];
+      const resultText = `Sau ${n / 12} năm / Za ${n / 12} let: tổng số tiền / celková částka là: ${total.toFixed(2)} EUR`;
 
       document.getElementById("result").innerText = resultText;
     }
