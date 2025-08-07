@@ -165,7 +165,16 @@
       }
 
       const language = document.getElementById("languageSelector").value;
-      const resultText = `Sau ${n / 12 | 0} năm / Za ${n / 12 | 0} let: tổng số tiền / celková částka là: ${total.toFixed(2)} EUR`;
+const years = n / 12 | 0;
+
+const texts = {
+  vi: `Sau ${years} năm: tổng số tiền là ${total.toFixed(2)} EUR`,
+  cz: `Za ${years} let: celková částka je ${total.toFixed(2)} EUR`,
+};
+
+// Ví dụ: hiển thị tiếng Việt nếu ngôn ngữ đang chọn là 'vi'
+const lang = 'vi'; // hoặc 'cz'
+const resultText = texts[lang];
 
       document.getElementById("result").innerText = resultText;
     }
