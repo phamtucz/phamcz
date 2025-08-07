@@ -121,7 +121,68 @@
     <span data-lang="vn">Cung cấp dịch vụ tư vấn pháp lý và kinh doanh trọn gói: từ mua lại, sáp nhập, chuyển nhượng cho đến giải thể doanh nghiệp</span>
   </li>
 </ul>
+  <select id="languageSelector" onchange="switchLanguage()">
+    <option value="vn">Tiếng Việt</option>
+    <option value="cz">Čeština</option>
+  </select>
 
+  <h2 data-lang="vn">Bảng tính lãi suất</h2>
+  <h2 data-lang="cz">Kalkulačka složeného úroku</h2>
+
+  <label data-lang="vn">Số tiền ban đầu (EUR):</label>
+  <label data-lang="cz">Počáteční investice (EUR):</label>
+  <input type="number" id="initial" value="6000"><br><br>
+
+  <label data-lang="vn">Lãi suất hàng năm (%):</label>
+  <label data-lang="cz">Roční úroková sazba (%):</label>
+  <input type="number" id="rate" value="9"><br><br>
+
+  <label data-lang="vn">Số năm đầu tư:</label>
+  <label data-lang="cz">Doba investice (roky):</label>
+  <input type="number" id="years" value="25"><br><br>
+
+  <label data-lang="vn">Đầu tư thêm hàng tháng (EUR):</label>
+  <label data-lang="cz">Měsíční příspěvek (EUR):</label>
+  <input type="number" id="monthly" value="600"><br><br>
+
+  <button onclick="calculate()" data-lang="vn">Tính toán</button>
+  <button onclick="calculate()" data-lang="cz">Spočítat</button>
+
+  <h3 data-lang="vn">Kết quả:</h3>
+  <h3 data-lang="cz">Výsledek:</h3>
+  <p id="result"></p>
+
+  <script>
+    function calculate() {
+      let P = parseFloat(document.getElementById("initial").value);    // Số tiền ban đầu
+      let r = parseFloat(document.getElementById("rate").value) / 100 / 12; // Lãi suất hàng tháng
+      let n = parseInt(document.getElementById("years").value) * 12;    // Tổng số tháng
+      let m = parseFloat(document.getElementById("monthly").value);     // Tiền đầu tư hàng tháng
+
+      let total = P * Math.pow(1 + r, n);
+      for (let i = 1; i <= n; i++) {
+        total += m * Math.pow(1 + r, n - i);
+      }
+
+      const language = document.getElementById("languageSelector").value;
+      const resultText = language === "cz"
+        ? `Za ${n / 12} let bude celková částka přibližně: ${total.toFixed(2)} EUR`
+        : `Sau ${n / 12} năm, tổng số tiền là khoảng: ${total.toFixed(2)} EUR`;
+
+      document.getElementById("result").innerText = resultText;
+    }
+
+    function switchLanguage() {
+      const selectedLang = document.getElementById("languageSelector").value;
+      document.querySelectorAll('[data-lang]').forEach(el => {
+        el.style.display = (el.getAttribute('data-lang') === selectedLang) ? '' : 'none';
+      });
+    }
+
+    // Mặc định chọn tiếng Việt
+    switchLanguage();
+  </script>
+  </script>
         </section>
 
         <section>
