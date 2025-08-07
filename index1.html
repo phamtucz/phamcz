@@ -1,132 +1,209 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Realitní makléř Praha | Ing. Minh Tu Pham</title>
-  <meta name="description" content="Profesionální realitní makléř pro českou a vietnamskou komunitu v Praze. Pomoc s nemovitostmi, hypotékou a finančním poradenstvím." />
-  <meta name="keywords" content="realitní makléř Praha, vietnamská komunita, finanční poradce, nemovitosti SAPA, hypotéky, pojištění" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://www.nnmm.cz" />
-  <link rel="icon" href="https://pham.cz/static/img/favicon-96x96.png" type="image/png" />
-  <link rel="apple-touch-icon" href="https://pham.cz/static/img/apple-touch-icon.png" />
-  <link rel="manifest" href="https://pham.cz/static/img/site.webmanifest" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Realitní makléř a finanční poradenství Praha | Ing. Minh Tu Pham</title>
+    <meta name="description" content="Profesionální realitní makléř a finanční poradce pro českou a vietnamskou komunitu v Praze. Pomoc s nemovitostmi, hypotékou, investicemi a prokázáním původu peněz." />
+    <meta name="keywords" content="realitní makléř Praha, vietnamská komunita, finanční poradce, nemovitosti SAPA, hypotéky, pojištění, původ peněz, investice" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.nnmm.cz" />
+    <link rel="icon" href="https://pham.cz/static/img/favicon-96x96.png" type="image/png" />
+    <link rel="apple-touch-icon" href="https://pham.cz/static/img/apple-touch-icon.png" />
+    <link rel="manifest" href="https://pham.cz/static/img/site.webmanifest" />
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "RealEstateAgent",
-    "name": "Ing. Minh Tu Pham",
-    "image": "https://nnmm.cz/static/img/1tu.jpg",
-    "telephone": "+420778081986",
-    "email": "tu.pham@kwcz.cz",
-    "url": "https://www.nnmm.cz",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "OC SAPA, 5. patro, vedle restaurace Đông Đô",
-      "addressLocality": "Praha 4",
-      "postalCode": "14000",
-      "addressCountry": "CZ"
-    },
-    "areaServed": ["Praha", "Česká republika"],
-    "languages": ["cs", "vi"]
-  }
-  </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "RealEstateAgent",
+        "name": "Ing. Minh Tu Pham",
+        "image": "https://nnmm.cz/static/img/1tu.jpg",
+        "telephone": "+420778081986",
+        "email Reality": "tu.pham@kwcz.cz", "email Finance": "minhtu.pham@beplan.cz"
+        "url": "https://www.nnmm.cz",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "OC SAPA, 5. patro, vedle restaurace Đông Đô",
+            "addressLocality": "Praha 4",
+            "postalCode": "14000",
+            "addressCountry": "CZ"
+        },
+        "areaServed": ["Praha", "Česká republika"],
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Služby",
+            "itemListElement": [
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Prodej a pronájem nemovitostí" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Finanční poradenství pro investice" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Zajištění hypotečních úvěrů" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pojištění" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Prokázání původu peněz" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Poradenství pro převod peněz" } }
+            ]
+        },
+        "knowsLanguage": ["cs", "vi"]
+    }
+    </script>
 
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; background: #f9f9f9; color: #333; }
-    .slogan-banner {
-      background-color: #004d99; color: white; text-align: center;
-      padding: 15px 20px; font-size: 1.2em;
-    }
-    .lang-switcher { text-align: center; margin: 10px 0; }
-    .lang-switcher button {
-      font-size: 1em; padding: 8px 14px; margin: 4px;
-      border: none; border-radius: 5px;
-      background-color: #ddd; cursor: pointer;
-    }
-    .lang-switcher button.active {
-      background-color: #004d99; color: white;
-    }
-    .container {
-      max-width: 800px; margin: 20px auto; background: white;
-      padding: 25px; box-shadow: 0 0 10px rgba(0,0,0,0.05);
-      border-radius: 10px;
-    }
-    h1 { text-align: center; color: #b30000; }
-    h2 { color: #004d99; margin-top: 30px; }
-    .profile-img {
-      width: 150px; height: 150px; object-fit: cover;
-      border-radius: 50%; border: 4px solid #b30000;
-      margin: 0 auto 20px; display: block;
-    }
-    ul { padding-left: 20px; }
-    .qr-code {
-      display: block; margin: 20px auto;
-      max-width: 200px; border-radius: 8px;
-      border: 1px solid #ccc;
-    }
-    footer {
-      text-align: center; font-size: 0.9em; color: #666;
-      margin-top: 40px; padding: 15px 0;
-    }
-    .lang { display: none; }
-  </style>
-
-  <script>
-    function setLanguage(lang) {
-      document.querySelectorAll('.lang').forEach(el => {
-        el.style.display = el.classList.contains(lang) ? 'block' : 'none';
-      });
-      document.getElementById('btn-cz').classList.toggle('active', lang === 'cz');
-      document.getElementById('btn-vn').classList.toggle('active', lang === 'vn');
-      localStorage.setItem('preferredLang', lang);
-    }
-    document.addEventListener('DOMContentLoaded', () => {
-      const saved = localStorage.getItem('preferredLang') || 'cz';
-      setLanguage(saved);
-    });
-  </script>
+    <style>
+        :root {
+            --primary-color: #004d99;
+            --secondary-color: #b30000;
+        }
+        body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif; margin: 0; background-color: #f9f9f9; color: #333; line-height: 1.6; }
+        .slogan-banner { background-color: var(--primary-color); color: white; text-align: center; padding: 20px; font-size: 1.2em; }
+        .slogan-banner p { margin: 0.5em 0; }
+        .lang-switcher { text-align: center; padding: 15px 0; }
+        .lang-switcher button { font-size: 1em; padding: 8px 14px; margin: 4px; border: 1px solid #ccc; border-radius: 5px; background-color: #f0f0f0; cursor: pointer; transition: background-color 0.3s, color 0.3s; }
+        .lang-switcher button.active { background-color: var(--primary-color); color: white; border-color: var(--primary-color); }
+        .container { max-width: 800px; margin: 20px auto; background: white; padding: 25px; box-shadow: 0 2px 15px rgba(0,0,0,0.1); border-radius: 10px; }
+        h1 { text-align: center; color: var(--secondary-color); }
+        h2 { color: var(--primary-color); margin-top: 30px; border-bottom: 2px solid #f0f0f0; padding-bottom: 5px; }
+        .profile-img { width: 150px; height: 150px; object-fit: cover; border-radius: 50%; border: 4px solid var(--secondary-color); margin: 0 auto 20px; display: block; }
+        ul { padding-left: 20px; list-style-type: '✓ '; }
+        .qr-code { display: block; margin: 20px auto; max-width: 200px; border-radius: 8px; border: 1px solid #ccc; }
+        footer { text-align: center; font-size: 0.9em; color: #666; margin-top: 40px; padding: 20px 0; border-top: 1px solid #eee; }
+        footer p { margin: 5px 0; }
+        [data-lang] { display: none; }
+        [data-lang].active { display: block; }
+        .service-list li { margin-bottom: 10px; }
+    </style>
 </head>
 <body>
-  <div class="slogan-banner">
-    <p class="lang cz"><strong>Spojme se a najděme nejlepší řešení pro vaši budoucnost.</strong></p>
-    <p class="lang vn"><strong>Hãy kết nối với chúng tôi để tìm ra giải pháp tốt nhất cho tương lai của bạn.</strong></p>
-  </div>
 
-  <div class="lang-switcher">
-    <button onclick="setLanguage('cz')" id="btn-cz">🇨🇿 Čeština</button>
-    <button onclick="setLanguage('vn')" id="btn-vn">🇻🇳 Tiếng Việt</button>
-  </div>
+    <header class="slogan-banner">
+        <p data-lang="cz"><strong>Spojme se a najděme nejlepší řešení pro vaši budoucnost.</strong></p>
+        <p data-lang="vn"><strong>Hãy kết nối với chúng tôi để tìm ra giải pháp tốt nhất cho tương lai của bạn.</strong></p>
+        <p data-lang="cz">Poradenství se srdcem – investice s rozhledem – společně k prosperitě!</p>
+        <p data-lang="vn">Tư vấn có tâm – đầu tư có tầm – đồng hành thịnh vượng!</p>
+    </header>
 
-  <div class="container">
-    <img src="https://nnmm.cz/static/img/1tu.jpg" alt="Profilová fotografie Minh Tu Pham" class="profile-img" loading="lazy" />
-    <h1 class="lang cz">Ing. Minh Tu Pham</h1>
-    <h1 class="lang vn">Kỹ sư Phạm Minh Tứ</h1>
-    <p class="lang cz" style="text-align:center;">Realitní makléř | Finanční poradce</p>
-    <p class="lang vn" style="text-align:center;">Chuyên viên môi giới bất động sản | Tư vấn tài chính</p>
+    <div class="lang-switcher">
+        <button onclick="setLanguage('cz')" id="btn-cz">🇨🇿 Čeština</button>
+        <button onclick="setLanguage('vn')" id="btn-vn">🇻🇳 Tiếng Việt</button>
+    </div>
 
-    <h2 class="lang cz">Služby</h2>
-    <h2 class="lang vn">Dịch vụ</h2>
-    <ul>
-      <li><span class="lang cz">Prodej a pronájem nemovitostí</span><span class="lang vn">Mua bán và cho thuê bất động sản</span></li>
-      <li><span class="lang cz">Finanční poradenství pro investice</span><span class="lang vn">Tư vấn tài chính cho đầu tư</span></li>
-      <li><span class="lang cz">Zajištění hypotečních úvěrů</span><span class="lang vn">Hỗ trợ vay thế chấp</span></li>
-      <li><span class="lang cz">Pojištění: životní, majetkové a podnikatelské</span><span class="lang vn">Bảo hiểm: nhân thọ, tài sản và doanh nghiệp</span></li>
-    </ul>
+    <main class="container">
+        <img src="https://nnmm.cz/static/img/1tu.jpg" alt="Profilová fotografie Ing. Minh Tu Pham" class="profile-img" loading="lazy" />
+        <div style="text-align: center;">
+            <h1 data-lang="cz">Ing. Minh Tu Pham</h1>
+            <h1 data-lang="vn">Kỹ sư Phạm Minh Tứ</h1>
+            <p data-lang="cz">Realitní makléř | Finanční poradce</p>
+            <p data-lang="vn">Môi giới bất động sản | Tư vấn tài chính cá nhân & đầu tư </p>
+        </div>
 
-    <h2 class="lang cz">Kontakt</h2>
-    <h2 class="lang vn">Liên hệ</h2>
-    <p><strong>Tel:</strong> <a href="tel:+420778081986">+420 778 081 986</a></p>
-    <p><strong>Email:</strong> <a href="mailto:tu.pham@kwcz.cz">tu.pham@kwcz.cz</a></p>
-    <p><strong>Web:</strong> <a href="https://www.nnmm.cz" target="_blank" rel="noopener noreferrer">www.nnmm.cz</a></p>
+        <section>
+            <h2 data-lang="cz">Služby</h2>
+            <h2 data-lang="vn">Dịch vụ</h2>
+            <ul class="service-list">
+                <li><span data-lang="cz">Prodej a pronájem nemovitostí</span><span data-lang="vn">Mua bán và cho thuê bất động sản</span></li>
+                <li><span data-lang="cz">Finanční poradenství pro investice</span><span data-lang="vn">Thiết kế các giải pháp tài chính và kênh đầu tư dành riêng cho người Việt. <br>💼 tích lũy – đầu tư - bảo vệ – vay vốn với lãi suất tốt nhất</span></li>
+                <li><span data-lang="cz">Pomůžeme vám získat nejvýhodnější hypoteční i spotřebitelský úvěr na trhu</span><span data-lang="vn">Hỗ trợ làm hồ sơ xin trợ cấp sửa chữa nhà ở tại Séc lên đến 1 triệu korun.</span></li>
+                <li><span data-lang="cz">Investiční služby, zprostředkování pojištění, spotřebitelských úvěrů a doplňkového penzijního spoření</span><span data-lang="vn">Các dịch vụ đầu tư, bảo hiểm, tín dụng tiêu dùng và tiết kiệm hưu trí bổ sung </span></li>
+                <li><span data-lang="cz">Komplexní poradenství v oblasti finančních transakcí mezi Vietnamem a ČR: od oficiálního nákupu cizích měn za výhodné kurzy, přes realizaci převodu, až po kompletaci dokumentace pro prokázání původu peněz pro účely investice či nákupu nemovitosti</span><span data-lang="vn">Tư vấn toàn diện về giao dịch tài chính giữa Việt Nam và Séc: từ việc mua bán ngoại tệ chính thống với giá tốt, thực hiện chuyển tiền, cho đến hoàn tất hồ sơ giải trình nguồn gốc để đầu tư hoặc mua bất động sản</span></li>
+                <li><span data-lang="cz">Nabízíme komplexní poradenství od nákupu, prodeje a fúzí firem až po jejich asistovanou likvidaci</span><span data-lang="vn">Cung cấp dịch vụ tư vấn pháp lý và kinh doanh trọn gói: từ mua lại, sáp nhập, chuyển nhượng cho đến giải thể doanh nghiệp</span></li>
+              
+            </ul>
+        </section>
 
-    <h2 class="lang cz">Kancelář</h2>
-    <h2 class="lang vn">Văn phòng</h2>
-    <p class="lang cz">5. patro, vedle restaurace Đông Đô – OC SAPA, Praha 4</p>
-    <p class="lang vn">Tầng 5, cạnh nhà hàng Đông Đô – Trung tâm SAPA, Praha 4</p>
+        <section>
+            <h2 data-lang="cz">Kontakt</h2>
+            <h2 data-lang="vn">Liên hệ</h2>
+            <p><strong>Tel:</strong> <a href="tel:+420778081986">+420 778 081 986</a></p>
+            <p><strong>Email Reality:</strong> <a href="mailto:tu.pham@kwcz.cz">tu.pham@kwcz.cz</a></p>
+            <p><strong>Email Finance:</strong> <a href="mailto:minhtu.pham@beplan.cz">minhtu.pham@beplan.cz</a></p>
+            <p><strong>Web:</strong> <a href="https://www.nnmm.cz" target="_blank" rel="noopener noreferrer">www.nnmm.cz</a></p>
+        </section>
 
-    <h2>🔗 QR kód</h2>
-    <p class="lang cz">Naskenujte pro uložení kontaktů</p>
-    <p class="lang vn">Quét mã QR để lưu thông tin liên hệ</p>
-    <img class="qr-code" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=BEGIN:VCARD%0AVERSION:3.0%0AFN:Ing. Minh Tu Pham%0ATEL:+420778081986%0AEMAIL:tu.pham@kwcz.cz%0AURL:https://www.nnmm.cz%0AEND:VCARD" alt="QR kód kontaktu Minh Tu Pham
+        <section>
+            <h2 data-lang="cz">Kancelář</h2>
+            <h2 data-lang="vn">Văn phòng</h2>
+            <p data-lang="cz">5. patro, vedle restaurace Đông Đô – OC SAPA, Praha 4</p>
+            <p data-lang="vn">Tầng 5, đối diện Ivo, toà nhà cạnh nhà hàng Đông Đô – Trung tâm SAPA, Praha 4</p>
+<iframe title="Embedded Google Map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2420.929219720558!2d14.464626411732283!3d50.00169491945519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b912303bb8fc3%3A0xa057b93346dc5ccf!2sIng.%20Pham%20Minh%20Tu%20Reality!5e1!3m2!1scs!2scz!4v1751403321631!5m2!1scs!2scz" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+
+        <section>
+            <h2 data-lang="cz">🔗 QR kód pro rychlý kontakt</h2>
+            <h2 data-lang="vn">🔗 Mã QR để liên hệ nhanh</h2>
+            <p data-lang="cz">Naskenujte pro uložení kontaktů do telefonu.</p>
+            <p data-lang="vn">Quét mã QR để lưu thông tin liên hệ vào điện thoại của bạn.</p>
+<img src="https://nnmm.cz/static/img/qrtu.png" alt="QR kód" 
+     style="display:block; margin:20px auto; width:150px; height:150px; border:2px solid red; border-radius:8px;" />
+        </section>
+    </main>
+
+<footer>
+    <p><strong>MINH TU PHAM, IČO: 66473721</strong></p>
+    <p>Sídlo: Praha, Česká republika</p>
+    <p>&copy; 2025 Všechna práva vyhrazena</p>
+
+    <hr style="margin:20px auto; max-width:400px; border:0; border-top:1px solid #ccc;" />
+
+    <div style="font-size: 0.85em; text-align: left; max-width: 800px; margin: 0 auto; color: #555;">
+        <p data-lang="cz"><strong>Právní informace:</strong></p>
+        <p data-lang="cz">
+            Investiční služby, zprostředkování pojištění, spotřebitelských úvěrů a doplňkového penzijního spoření uvedené na tomto webu
+            jsou poskytovány na základě registrace vázaného zástupce Minh Tu Pham, IČO 66473721,
+            registrovaného pod samostatným zprostředkovatelem BEplan finanční plánování s.r.o., IČO 05779944,
+            v příslušných registrech České národní banky.
+        </p>
+
+        <p data-lang="vn"><strong>Thông tin pháp lý:</strong></p>
+        <p data-lang="vn">
+            Các dịch vụ đầu tư, bảo hiểm, tín dụng tiêu dùng và tiết kiệm hưu trí bổ sung được đề cập trên trang web này
+            được cung cấp dưới tên đại lý liên kết Minh Tu Pham, IČO 66473721,
+            đã đăng ký dưới công ty môi giới độc lập BEplan finanční plánování s.r.o., IČO 05779944,
+            trong hệ thống đăng ký của Ngân hàng Quốc gia Séc.
+        </p>
+    </div>
+</footer>
+    <script>
+        function setLanguage(lang) {
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                if (el.dataset.lang === lang) {
+                    el.classList.add('active');
+                    if (window.getComputedStyle(el).display === 'none') {
+                        el.style.display = 'block';
+                    }
+                } else {
+                    el.classList.remove('active');
+                    el.style.display = 'none';
+                }
+            });
+
+            document.querySelectorAll('.service-list li').forEach(li => {
+                const czSpan = li.querySelector('[data-lang="cz"]');
+                const vnSpan = li.querySelector('[data-lang="vn"]');
+                if (lang === 'cz') {
+                    if(czSpan) czSpan.style.display = 'inline';
+                    if(vnSpan) vnSpan.style.display = 'none';
+                } else {
+                    if(czSpan) czSpan.style.display = 'none';
+                    if(vnSpan) vnSpan.style.display = 'inline';
+                }
+            });
+
+            document.getElementById('btn-cz').classList.toggle('active', lang === 'cz');
+            document.getElementById('btn-vn').classList.toggle('active', lang === 'vn');
+            localStorage.setItem('preferredLang', lang);
+            document.documentElement.lang = lang === 'vn' ? 'vi' : 'cs';
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferredLang');
+            const browserLang = navigator.language.split('-')[0];
+            
+            let initialLang = 'cz';
+            if (savedLang) {
+                initialLang = savedLang;
+            } else if (browserLang === 'vi') {
+                initialLang = 'vn';
+            }
+            
+            setLanguage(initialLang);
+        });
+    </script>
+
+</body>
+</html>
