@@ -165,9 +165,7 @@
       }
 
       const language = document.getElementById("languageSelector").value;
-      const resultText = language === "cz"
-        ? `Za ${n / 12} let bude celková částka přibližně: ${total.toFixed(2)} EUR`
-        : `Sau ${n / 12} năm, tổng số tiền là khoảng: ${total.toFixed(2)} EUR`;
+      const resultText = `Sau ${n / 12 | 0} năm / Za ${n / 12 | 0} let: tổng số tiền / celková částka là: ${total.toFixed(2)} EUR`;
 
       document.getElementById("result").innerText = resultText;
     }
@@ -178,8 +176,6 @@
         el.style.display = (el.getAttribute('data-lang') === selectedLang) ? '' : 'none';
       });
     }
-
-    // Mặc định chọn tiếng Việt
     switchLanguage();
   </script>
   </script>
