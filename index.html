@@ -250,8 +250,8 @@
                         <td id="balanceHypo" style="text-align: right;"></td>
                     </tr>
                     <tr>
-                        <td data-lang="vn">Thu nhập ròng nên lớn hơn:</td>
-                        <td data-lang="cz" style="display:none">Čistý příjem by měl být větší než:</td>
+                        <td data-lang="vn">Thu nhập ròng hàng tháng nên lớn hơn:</td>
+                        <td data-lang="cz" style="display:none">Čistý měsíční příjem by měl být větší než:</td>
                         <td id="minNetIncomeHypo" style="text-align: right;"></td>
                     </tr>
                 </tbody>
@@ -346,10 +346,10 @@
             }
             const totalInterest = total - totalPrincipal;
 
-            document.getElementById("totalMonthsInv").textContent = n + ' ' + (document.documentElement.lang === 'vi' ? 'tháng' : 'měsíců');
-            document.getElementById("totalPrincipalInv").textContent = formatNumber(totalPrincipal, 'EUR');
-            document.getElementById("totalInterestInv").textContent = formatNumber(totalInterest, 'EUR');
-            document.getElementById("totalAmountInv").textContent = formatNumber(total, 'EUR');
+            document.getElementById("totalMonthsInv").innerHTML = `<strong>${n}</strong> ${document.documentElement.lang === 'vi' ? 'tháng' : 'měsíců'}`;
+            document.getElementById("totalPrincipalInv").innerHTML = `<strong>${formatNumber(totalPrincipal, 'EUR')}</strong>`;
+            document.getElementById("totalInterestInv").innerHTML = `<strong>${formatNumber(totalInterest, 'EUR')}</strong>`;
+            document.getElementById("totalAmountInv").innerHTML = `<strong>${formatNumber(total, 'EUR')}</strong>`;
         
             document.getElementById("resultInvestment").innerHTML = '';
             document.getElementById("tableInvestment").style.display = 'table';
@@ -383,13 +383,13 @@
             // Tính toán thu nhập ròng tối thiểu dựa trên DSTI 45%
             const minNetIncome = monthlyPayment / 0.45;
 
-            document.getElementById("totalMonthsHypo").textContent = months + ' ' + (document.documentElement.lang === 'vi' ? 'tháng' : 'měsíců');
-            document.getElementById("monthlyPaymentHypo").textContent = formatNumber(monthlyPayment, 'Kč');
-            document.getElementById("totalPaymentsHypo").textContent = formatNumber(monthlyPayment * months, 'Kč');
-            document.getElementById("totalInterestHypo").textContent = formatNumber(totalInterest, 'Kč');
-            document.getElementById("totalPrincipalHypo").textContent = formatNumber(loan, 'Kč');
-            document.getElementById("balanceHypo").textContent = formatNumber(balance > 0 ? balance : 0, 'Kč');
-            document.getElementById("minNetIncomeHypo").textContent = formatNumber(minNetIncome, 'Kč');
+            document.getElementById("totalMonthsHypo").innerHTML = `<strong>${months}</strong> ${document.documentElement.lang === 'vi' ? 'tháng' : 'měsíců'}`;
+            document.getElementById("monthlyPaymentHypo").innerHTML = `<strong>${formatNumber(monthlyPayment, 'Kč')}</strong>`;
+            document.getElementById("totalPaymentsHypo").innerHTML = `<strong>${formatNumber(monthlyPayment * months, 'Kč')}</strong>`;
+            document.getElementById("totalInterestHypo").innerHTML = `<strong>${formatNumber(totalInterest, 'Kč')}</strong>`;
+            document.getElementById("totalPrincipalHypo").innerHTML = `<strong>${formatNumber(loan, 'Kč')}</strong>`;
+            document.getElementById("balanceHypo").innerHTML = `<strong>${formatNumber(balance > 0 ? balance : 0, 'Kč')}</strong>`;
+            document.getElementById("minNetIncomeHypo").innerHTML = `<strong>${formatNumber(minNetIncome, 'Kč')}</strong>`;
         
             document.getElementById('resultHypo').innerHTML = '';
             document.getElementById('amortTable').style.display = 'table';
