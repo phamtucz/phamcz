@@ -109,7 +109,7 @@
     <span data-lang="vn">Hỗ trợ làm hồ sơ xin trợ cấp sửa chữa nhà ở tại Séc lên đến 1,5 triệu korun.</span>
   </li>
   <li>
-    <span data-lang="cz">Investice, pojištění, spotřebitelské úvěry a doplňkové penzijní spoření ve spolupráci s BEplan</span>
+    <span data-lang="cz">Investice, pojištění, spotřebitelské úvěry a doplňkové penzijní spoření</span>
     <span data-lang="vn">Các dịch vụ đầu tư, bảo hiểm, tín dụng tiêu dùng và tiết kiệm hưu trí bổ sung</span>
   </li>
   <li>
@@ -121,9 +121,66 @@
     <span data-lang="vn">Cung cấp dịch vụ tư vấn pháp lý và kinh doanh trọn gói: từ mua lại, sáp nhập, chuyển nhượng cho đến giải thể doanh nghiệp</span>
   </li>
 </ul>
+<h2 data-lang="vn">Bảng tính lãi suất từ tiết kiệm đầu tư</h2>
+<h2 data-lang="cz">Kalkulačka složeného úroku</h2>
 
-        </section>
+<label data-lang="vn">Số tiền ban đầu (EUR):</label>
+<label data-lang="cz">Počáteční investice (EUR):</label>
+<input type="number" id="initial" value="6000"><br><br>
 
+<label data-lang="vn">Lãi suất hàng năm (%):</label>
+<label data-lang="cz">Roční úroková sazba (%):</label>
+<input type="number" id="rate" value="9"><br><br>
+
+<label data-lang="vn">Số năm đầu tư:</label>
+<label data-lang="cz">Doba investice (roky):</label>
+<input type="number" id="years" value="25"><br><br>
+
+<label data-lang="vn">Đầu tư thêm hàng tháng (EUR):</label>
+<label data-lang="cz">Měsíční příspěvek (EUR):</label>
+<input type="number" id="monthly" value="600"><br><br>
+
+<button onclick="calculate()" data-lang="vn">Tính toán</button>
+<button onclick="calculate()" data-lang="cz">Spočítat</button>
+
+<h3 data-lang="vn">Kết quả:</h3>
+<h3 data-lang="cz">Výsledek:</h3>
+<p id="result"></p>
+
+<script>
+function formatNumberEU(number) {
+  return number.toLocaleString('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+
+function calculate() {
+  let P = parseFloat(document.getElementById("initial").value);
+  let r = parseFloat(document.getElementById("rate").value) / 100 / 12;
+  let n = parseInt(document.getElementById("years").value) * 12;
+  let m = parseFloat(document.getElementById("monthly").value);
+
+  let total = P * Math.pow(1 + r, n);
+  for (let i = 1; i <= n; i++) {
+    total += m * Math.pow(1 + r, n - i);
+  }
+
+  let totalPrincipal = P + m * n;
+  let totalInterest = total - totalPrincipal;
+
+  let resultText = `
+<b>Tiếng Việt:</b><br>
+Tổng tiền tiết kiệm (gốc + đóng góp): ${formatNumberEU(totalPrincipal)} EUR<br>
+Tổng tiền lãi: ${formatNumberEU(totalInterest)} EUR<br>
+Tổng cộng (gốc + lãi): ${formatNumberEU(total)} EUR<br><br>
+
+<b>Čeština:</b><br>
+Celková úspora (vklad + příspěvky): ${formatNumberEU(totalPrincipal)} EUR<br>
+Celkový úrok: ${formatNumberEU(totalInterest)} EUR<br>
+Celkem (vklad + úrok): ${formatNumberEU(total)} EUR
+`;
+
+  document.getElementById("result").innerHTML = resultText;
+}
+</script>
         <section>
             <h2 data-lang="cz">Kontakt</h2>
             <h2 data-lang="vn">Liên hệ</h2>

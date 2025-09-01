@@ -95,15 +95,94 @@
         <section>
             <h2 data-lang="cz">Služby</h2>
             <h2 data-lang="vn">Dịch vụ</h2>
-            <ul class="service-list">
-                <li><span data-lang="cz">Prodej a pronájem nemovitostí</span><span data-lang="vn">Mua bán và cho thuê bất động sản</span></li>
-                <li><span data-lang="cz">Finanční poradenství pro investice</span><span data-lang="vn">Thiết kế các giải pháp tài chính và kênh đầu tư dành riêng cho người Việt. <br>💼 tích lũy – đầu tư - bảo vệ – vay vốn với lãi suất tốt nhất</span></li>
-                <li><span data-lang="cz">Pomůžeme vám získat nejvýhodnější hypoteční i spotřebitelský úvěr na trhu</span><span data-lang="vn">Hỗ trợ làm hồ sơ xin trợ cấp sửa chữa nhà ở tại Séc lên đến 1 triệu korun.</span></li>
-                <li><span data-lang="cz">Investiční služby, zprostředkování pojištění, spotřebitelských úvěrů a doplňkového penzijního spoření</span><span data-lang="vn">Các dịch vụ đầu tư, bảo hiểm, tín dụng tiêu dùng và tiết kiệm hưu trí bổ sung </span></li>
-                <li><span data-lang="cz">Komplexní poradenství v oblasti finančních transakcí mezi Vietnamem a ČR: od oficiálního nákupu cizích měn za výhodné kurzy, přes realizaci převodu, až po kompletaci dokumentace pro prokázání původu peněz pro účely investice či nákupu nemovitosti</span><span data-lang="vn">Tư vấn toàn diện về giao dịch tài chính giữa Việt Nam và Séc: từ việc mua bán ngoại tệ chính thống với giá tốt, thực hiện chuyển tiền, cho đến hoàn tất hồ sơ giải trình nguồn gốc để đầu tư hoặc mua bất động sản</span></li>
-                <li><span data-lang="cz">Nabízíme komplexní poradenství od nákupu, prodeje a fúzí firem až po jejich asistovanou likvidaci</span><span data-lang="vn">Cung cấp dịch vụ tư vấn pháp lý và kinh doanh trọn gói: từ mua lại, sáp nhập, chuyển nhượng cho đến giải thể doanh nghiệp</span></li>
-              
-            </ul>
+            <ul>
+  <li>
+    <span data-lang="cz">Prodej a pronájem nemovitostí</span>
+    <span data-lang="vn">Mua bán và cho thuê bất động sản</span>
+  </li>
+  <li>
+    <span data-lang="cz">Finanční poradenství a investiční strategie šité na míru vietnamské komunitě</span>
+    <span data-lang="vn">Thiết kế các giải pháp tài chính và kênh đầu tư dành riêng cho người Việt. <br>💼 Tích lũy – đầu tư – bảo vệ – vay vốn với lãi suất tốt nhất</span>
+  </li>
+  <li>
+    <span data-lang="cz">Pomůžeme vám získat nejvýhodnější hypoteční i spotřebitelský úvěr a vyřídit státní příspěvek na opravu bydlení až do výše 1 milionu korun</span>
+    <span data-lang="vn">Hỗ trợ làm hồ sơ xin trợ cấp sửa chữa nhà ở tại Séc lên đến 1 triệu korun.</span>
+  </li>
+  <li>
+    <span data-lang="cz">Investice, pojištění, spotřebitelské úvěry a doplňkové penzijní spoření</span>
+    <span data-lang="vn">Các dịch vụ đầu tư, bảo hiểm, tín dụng tiêu dùng và tiết kiệm hưu trí bổ sung</span>
+  </li>
+  <li>
+    <span data-lang="cz">Komplexní poradenství při finančních transakcích mezi Vietnamem a ČR – výhodné kurzy, bezpečný převod, doložení původu peněz</span>
+    <span data-lang="vn">Tư vấn toàn diện về giao dịch tài chính giữa Việt Nam và Séc: từ việc mua bán ngoại tệ chính thống với giá tốt, thực hiện chuyển tiền, cho đến hoàn tất hồ sơ giải trình nguồn gốc để đầu tư hoặc mua bất động sản</span>
+  </li>
+  <li>
+    <span data-lang="cz">Právní a podnikatelské poradenství – nákup, prodej, fúze a likvidace firem</span>
+    <span data-lang="vn">Cung cấp dịch vụ tư vấn pháp lý và kinh doanh trọn gói: từ mua lại, sáp nhập, chuyển nhượng cho đến giải thể doanh nghiệp</span>
+  </li>
+</ul>
+  <select id="languageSelector" onchange="switchLanguage()">
+    <option value="vn">Tiếng Việt</option>
+    <option value="cz">Čeština</option>
+  </select>
+
+  <h2 data-lang="vn">Bảng tính lãi suất</h2>
+  <h2 data-lang="cz">Kalkulačka složeného úroku</h2>
+
+  <label data-lang="vn">Số tiền ban đầu (EUR):</label>
+  <label data-lang="cz">Počáteční investice (EUR):</label>
+  <input type="number" id="initial" value="6000"><br><br>
+
+  <label data-lang="vn">Lãi suất hàng năm (%):</label>
+  <label data-lang="cz">Roční úroková sazba (%):</label>
+  <input type="number" id="rate" value="9"><br><br>
+
+  <label data-lang="vn">Số năm đầu tư:</label>
+  <label data-lang="cz">Doba investice (roky):</label>
+  <input type="number" id="years" value="25"><br><br>
+
+  <label data-lang="vn">Đầu tư thêm hàng tháng (EUR):</label>
+  <label data-lang="cz">Měsíční příspěvek (EUR):</label>
+  <input type="number" id="monthly" value="600"><br><br>
+
+  <button onclick="calculate()" data-lang="vn">Tính toán</button>
+  <button onclick="calculate()" data-lang="cz">Spočítat</button>
+
+  <h3 data-lang="vn">Kết quả:</h3>
+  <h3 data-lang="cz">Výsledek:</h3>
+  <p id="result"></p>
+
+  <script>
+    function calculate() {
+      let P = parseFloat(document.getElementById("initial").value);    // Số tiền ban đầu
+      let r = parseFloat(document.getElementById("rate").value) / 100 / 12; // Lãi suất hàng tháng
+      let n = parseInt(document.getElementById("years").value) * 12;    // Tổng số tháng
+      let m = parseFloat(document.getElementById("monthly").value);     // Tiền đầu tư hàng tháng
+
+      let total = P * Math.pow(1 + r, n);
+      for (let i = 1; i <= n; i++) {
+        total += m * Math.pow(1 + r, n - i);
+      }
+
+      const language = document.getElementById("languageSelector").value;
+      const resultText = language === "cz"
+        ? `Za ${n / 12} let bude celková částka přibližně: ${total.toFixed(2)} EUR`
+        : `Sau ${n / 12} năm, tổng số tiền là khoảng: ${total.toFixed(2)} EUR`;
+
+      document.getElementById("result").innerText = resultText;
+    }
+
+    function switchLanguage() {
+      const selectedLang = document.getElementById("languageSelector").value;
+      document.querySelectorAll('[data-lang]').forEach(el => {
+        el.style.display = (el.getAttribute('data-lang') === selectedLang) ? '' : 'none';
+      });
+    }
+
+    // Mặc định chọn tiếng Việt
+    switchLanguage();
+  </script>
+  </script>
         </section>
 
         <section>
