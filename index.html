@@ -78,12 +78,17 @@
         .calculator-section table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
         .calculator-section th, .calculator-section td { padding: 10px; border: 1px solid #ddd; text-align: right; }
         .calculator-section th { background-color: #f2f2f2; text-align: left; }
+        .calculator-section table input[type="number"] { width: 100%; border: none; text-align: right; padding: 0; margin: 0; }
+        .calculator-section table .result-row { font-weight: bold; }
+        .calculator-section table .input-row td:first-child { text-align: left; }
+        .calculator-section table .input-row td:last-child { padding: 0; }
+        .calculator-section table .input-row input { display: block; width: 100%; border: none; box-sizing: border-box; text-align: right; padding: 10px; }
     </style>
 </head>
 <body>
 
     <header class="slogan-banner">
-        <p data-lang="cz"><strong>Spojme se a najděme nejlepší řešení pro vaši budoucnost.</strong></p>
+        <p data-lang="cz"><strong>Spojme se a najděme nejlepší řešení pro vaši budućnost.</strong></p>
         <p data-lang="vn"><strong>Hãy kết nối với chúng tôi để tìm ra giải pháp tốt nhất cho tương lai của bạn.</strong></p>
         <p data-lang="cz">Poradenství se srdcem – investice s rozhledem – společně k prosperitě!</p>
         <p data-lang="vn">Tư vấn có tâm – đầu tư có tầm – đồng hành thịnh vượng!</p>
@@ -140,45 +145,47 @@
             <h2 data-lang="vn">Bảng tính tiết kiệm và đầu tư</h2>
             <h2 data-lang="cz">Kalkulačka spoření/investic</h2>
             
-            <label data-lang="vn">Số tiền ban đầu (EUR):</label>
-            <label data-lang="cz" style="display:none">Počáteční investice (EUR):</label>
-            <input type="number" id="initial" value="6000">
-            
-            <label data-lang="vn">Lãi suất hàng năm (%):</label>
-            <label data-lang="cz" style="display:none">Roční úroková sazba (%):</label>
-            <input type="number" id="rate" value="9">
-            
-            <label data-lang="vn">Số năm đầu tư:</label>
-            <label data-lang="cz" style="display:none">Doba investice (roky):</label>
-            <input type="number" id="years" value="25">
-            
-            <label data-lang="vn">Đầu tư thêm hàng tháng (EUR):</label>
-            <label data-lang="cz" style="display:none">Měsíční příspěvek (EUR):</label>
-            <input type="number" id="monthly" value="600">
-            
-            <button onclick="calculateInvestment()" data-lang="vn">Tính toán</button>
-            <button onclick="calculateInvestment()" data-lang="cz" style="display:none">Spočítat</button>
-            
-            <div id="resultInvestment" style="margin-top:1rem;"></div>
-            
-            <table id="tableInvestment" style="display:none;">
+            <table id="tableInvestment">
                 <tbody>
+                    <tr class="input-row">
+                        <td data-lang="vn">Số tiền ban đầu (EUR):</td>
+                        <td data-lang="cz" style="display:none">Počáteční investice (EUR):</td>
+                        <td><input type="number" id="initial" value="6000"></td>
+                    </tr>
+                    <tr class="input-row">
+                        <td data-lang="vn">Lãi suất hàng năm (%):</td>
+                        <td data-lang="cz" style="display:none">Roční úroková sazba (%):</td>
+                        <td><input type="number" id="rate" value="9"></td>
+                    </tr>
+                    <tr class="input-row">
+                        <td data-lang="vn">Số năm đầu tư:</td>
+                        <td data-lang="cz" style="display:none">Doba investice (roky):</td>
+                        <td><input type="number" id="years" value="25"></td>
+                    </tr>
+                    <tr class="input-row">
+                        <td data-lang="vn">Đầu tư thêm hàng tháng (EUR):</td>
+                        <td data-lang="cz" style="display:none">Měsíční příspěvek (EUR):</td>
+                        <td><input type="number" id="monthly" value="600"></td>
+                    </tr>
                     <tr>
+                        <td colspan="3"><button onclick="calculateInvestment()" data-lang="vn">Tính toán</button><button onclick="calculateInvestment()" data-lang="cz" style="display:none">Spočítat</button></td>
+                    </tr>
+                    <tr class="result-row" style="display:none;">
                         <td data-lang="vn">Tổng số tháng:</td>
                         <td data-lang="cz" style="display:none">Celkem měsíců:</td>
                         <td id="totalMonthsInv" style="text-align: right;"></td>
                     </tr>
-                    <tr>
+                    <tr class="result-row" style="display:none;">
                         <td data-lang="vn">Vốn tích lũy:</td>
                         <td data-lang="cz" style="display:none">Naspořená částka:</td>
                         <td id="totalPrincipalInv" style="text-align: right;"></td>
                     </tr>
-                    <tr>
+                    <tr class="result-row" style="display:none;">
                         <td data-lang="vn">Tổng lãi:</td>
                         <td data-lang="cz" style="display:none">Celkový úrok:</td>
                         <td id="totalInterestInv" style="text-align: right;"></td>
                     </tr>
-                    <tr>
+                    <tr class="result-row" style="display:none;">
                         <td data-lang="vn">Tổng cộng:</td>
                         <td data-lang="cz" style="display:none">Celkem:</td>
                         <td id="totalAmountInv" style="text-align: right;"></td>
@@ -193,63 +200,67 @@
             <h2 data-lang="vn">Bảng tính vay thế chấp mua nhà</h2>
             <h2 data-lang="cz">Kalkulačka hypotéky</h2>
             
-            <label data-lang="vn">Giá trị bất động sản (Kč):</label>
-            <label data-lang="cz" style="display:none">Cena nemovitosti (Kč):</label>
-            <input type="number" id="price" value="5000000">
-            
-            <label data-lang="vn">Vốn tự có (Kč):</label>
-            <label data-lang="cz" style="display:none">Vlastní zdroje (Kč):</label>
-            <input type="number" id="ownSource" value="1000000">
-            
-            <label data-lang="vn">Số tiền vay (Kč):</label>
-            <label data-lang="cz" style="display:none">Hypoteční částka (Kč):</label>
-            <input type="number" id="loanAmount" readonly>
-            
-            <label data-lang="vn">Lãi suất (% năm):</label>
-            <label data-lang="cz" style="display:none">Úroková sazba (% p.a.):</label>
-            <input type="number" id="interest" step="0.01" value="4.5">
-            
-            <label data-lang="vn">Thời hạn vay (năm):</label>
-            <label data-lang="cz" style="display:none">Délka úvěru (roky):</label>
-            <input type="number" id="yearsHypo" value="25">
-            
-            <button onclick="calculateHypo()">Tính toán / Spočítat</button>
-            
-            <div id="resultHypo" style="margin-top:1rem;"></div>
-            
-            <table id="amortTable" style="display:none;">
+            <table id="amortTable">
                 <tbody>
+                    <tr class="input-row">
+                        <td data-lang="vn">Giá trị bất động sản (Kč):</td>
+                        <td data-lang="cz" style="display:none">Cena nemovitosti (Kč):</td>
+                        <td><input type="number" id="price" value="5000000"></td>
+                    </tr>
+                    <tr class="input-row">
+                        <td data-lang="vn">Vốn tự có (Kč):</td>
+                        <td data-lang="cz" style="display:none">Vlastní zdroje (Kč):</td>
+                        <td><input type="number" id="ownSource" value="1000000"></td>
+                    </tr>
+                    <tr class="input-row">
+                        <td data-lang="vn">Số tiền vay (Kč):</td>
+                        <td data-lang="cz" style="display:none">Hypoteční částka (Kč):</td>
+                        <td><input type="number" id="loanAmount" readonly></td>
+                    </tr>
+                    <tr class="input-row">
+                        <td data-lang="vn">Lãi suất (% năm):</td>
+                        <td data-lang="cz" style="display:none">Úroková sazba (% p.a.):</td>
+                        <td><input type="number" id="interest" step="0.01" value="4.5"></td>
+                    </tr>
+                    <tr class="input-row">
+                        <td data-lang="vn">Thời hạn vay (năm):</td>
+                        <td data-lang="cz" style="display:none">Délka úvěru (roky):</td>
+                        <td><input type="number" id="yearsHypo" value="25"></td>
+                    </tr>
                     <tr>
+                        <td colspan="3"><button onclick="calculateHypo()">Tính toán / Spočítat</button></td>
+                    </tr>
+                    <tr class="result-row" style="display:none;">
                         <td data-lang="vn">Tổng số tháng:</td>
                         <td data-lang="cz" style="display:none">Celkem měsíců:</td>
                         <td id="totalMonthsHypo" style="text-align: right;"></td>
                     </tr>
-                    <tr>
+                    <tr class="result-row" style="display:none;">
                         <td data-lang="vn">Khoản trả hàng tháng:</td>
                         <td data-lang="cz" style="display:none">Měsíční splátka:</td>
                         <td id="monthlyPaymentHypo" style="text-align: right;"></td>
                     </tr>
-                    <tr>
+                    <tr class="result-row" style="display:none;">
                         <td data-lang="vn">Tổng khoản trả:</td>
                         <td data-lang="cz" style="display:none">Celkem splátek:</td>
                         <td id="totalPaymentsHypo" style="text-align: right;"></td>
                     </tr>
-                    <tr>
+                    <tr class="result-row" style="display:none;">
                         <td data-lang="vn">Tổng lãi vay:</td>
                         <td data-lang="cz" style="display:none">Celkový úrok:</td>
                         <td id="totalInterestHypo" style="text-align: right;"></td>
                     </tr>
-                    <tr>
+                    <tr class="result-row" style="display:none;">
                         <td data-lang="vn">Tổng gốc đã trả:</td>
                         <td data-lang="cz" style="display:none">Celková jistina:</td>
                         <td id="totalPrincipalHypo" style="text-align: right;"></td>
                     </tr>
-                    <tr>
+                    <tr class="result-row" style="display:none;">
                         <td data-lang="vn">Dư nợ cuối kỳ:</td>
                         <td data-lang="cz" style="display:none">Zůstatek na konci:</td>
                         <td id="balanceHypo" style="text-align: right;"></td>
                     </tr>
-                    <tr>
+                    <tr class="result-row" style="display:none;">
                         <td data-lang="vn">Thu nhập ròng hàng tháng nên lớn hơn:</td>
                         <td data-lang="cz" style="display:none">Čistý měsíční příjem by měl být větší než:</td>
                         <td id="minNetIncomeHypo" style="text-align: right;"></td>
@@ -351,8 +362,7 @@
             document.getElementById("totalInterestInv").innerHTML = `<strong>${formatNumber(totalInterest, 'EUR')}</strong>`;
             document.getElementById("totalAmountInv").innerHTML = `<strong>${formatNumber(total, 'EUR')}</strong>`;
         
-            document.getElementById("resultInvestment").innerHTML = '';
-            document.getElementById("tableInvestment").style.display = 'table';
+            document.querySelectorAll('#tableInvestment .result-row').forEach(row => row.style.display = 'table-row');
         }
         
         // Bảng tính vay thế chấp đã sửa
@@ -391,8 +401,7 @@
             document.getElementById("balanceHypo").innerHTML = `<strong>${formatNumber(balance > 0 ? balance : 0, 'Kč')}</strong>`;
             document.getElementById("minNetIncomeHypo").innerHTML = `<strong>${formatNumber(minNetIncome, 'Kč')}</strong>`;
         
-            document.getElementById('resultHypo').innerHTML = '';
-            document.getElementById('amortTable').style.display = 'table';
+            document.querySelectorAll('#amortTable .result-row').forEach(row => row.style.display = 'table-row');
         }
 
         document.addEventListener('DOMContentLoaded', () => {
