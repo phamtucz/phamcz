@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="cs">
+<html lang="vi">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -67,6 +67,22 @@
         [data-lang] { display: none; }
         [data-lang].active { display: block; }
         .service-list li { margin-bottom: 10px; }
+        
+        /* Cập nhật style cho bảng tính */
+        .calculator-section { margin-top: 2rem; padding: 1rem; border: 1px solid #ddd; border-radius: 8px; }
+        .calculator-section h3 { margin-top: 0; }
+        .calculator-section label, .calculator-section input, .calculator-section button { display: block; width: 100%; box-sizing: border-box; margin-bottom: 0.5rem; }
+        .calculator-section input { padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
+        .calculator-section button { padding: 10px; background-color: var(--primary-color); color: white; border: none; border-radius: 4px; cursor: pointer; transition: background-color 0.3s; }
+        .calculator-section button:hover { background-color: #003366; }
+        .calculator-section table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+        .calculator-section th, .calculator-section td { padding: 10px; border: 1px solid #ddd; text-align: right; }
+        .calculator-section th { background-color: #f2f2f2; text-align: left; }
+        .calculator-section table input[type="number"] { width: 100%; border: none; text-align: right; padding: 0; margin: 0; }
+        .calculator-section table .result-row { font-weight: bold; }
+        .calculator-section table .input-row td:first-child { text-align: left; }
+        .calculator-section table .input-row td:last-child { padding: 0; }
+        .calculator-section table .input-row input { display: block; width: 100%; border: none; box-sizing: border-box; text-align: right; padding: 10px; }
     </style>
 </head>
 <body>
@@ -96,91 +112,163 @@
             <h2 data-lang="cz">Služby</h2>
             <h2 data-lang="vn">Dịch vụ</h2>
             <ul>
-  <li>
-    <span data-lang="cz">Prodej a pronájem nemovitostí</span>
-    <span data-lang="vn">Mua bán và cho thuê bất động sản</span>
-  </li>
-  <li>
-    <span data-lang="cz">Finanční poradenství a investiční strategie šité na míru vietnamské komunitě</span>
-    <span data-lang="vn">Thiết kế các giải pháp tài chính và kênh đầu tư dành riêng cho người Việt. <br>💼 Tích lũy – đầu tư – bảo vệ – vay vốn với lãi suất tốt nhất</span>
-  </li>
-  <li>
-    <span data-lang="cz">Pomůžeme vám získat nejvýhodnější hypoteční i spotřebitelský úvěr a vyřídit státní příspěvek na opravu bydlení až do výše 1 milionu korun</span>
-    <span data-lang="vn">Hỗ trợ làm hồ sơ xin trợ cấp sửa chữa nhà ở tại Séc lên đến 1 triệu korun.</span>
-  </li>
-  <li>
-    <span data-lang="cz">Investice, pojištění, spotřebitelské úvěry a doplňkové penzijní spoření</span>
-    <span data-lang="vn">Các dịch vụ đầu tư, bảo hiểm, tín dụng tiêu dùng và tiết kiệm hưu trí bổ sung</span>
-  </li>
-  <li>
-    <span data-lang="cz">Komplexní poradenství při finančních transakcích mezi Vietnamem a ČR – výhodné kurzy, bezpečný převod, doložení původu peněz</span>
-    <span data-lang="vn">Tư vấn toàn diện về giao dịch tài chính giữa Việt Nam và Séc: từ việc mua bán ngoại tệ chính thống với giá tốt, thực hiện chuyển tiền, cho đến hoàn tất hồ sơ giải trình nguồn gốc để đầu tư hoặc mua bất động sản</span>
-  </li>
-  <li>
-    <span data-lang="cz">Právní a podnikatelské poradenství – nákup, prodej, fúze a likvidace firem</span>
-    <span data-lang="vn">Cung cấp dịch vụ tư vấn pháp lý và kinh doanh trọn gói: từ mua lại, sáp nhập, chuyển nhượng cho đến giải thể doanh nghiệp</span>
-  </li>
-</ul>
-<h2 data-lang="vn">Bảng tính lãi suất từ tiết kiệm đầu tư</h2>
-<h2 data-lang="cz">Kalkulačka složeného úroku</h2>
+                <li>
+                    <span data-lang="cz">Prodej a pronájem nemovitostí</span>
+                    <span data-lang="vn">Mua bán và cho thuê bất động sản</span>
+                </li>
+                <li>
+                    <span data-lang="cz">Finanční poradenství a investiční strategie šité na míru vietnamské komunitě</span>
+                    <span data-lang="vn">Thiết kế các giải pháp tài chính và kênh đầu tư dành riêng cho người Việt. <br>💼 Tích lũy – đầu tư – bảo vệ – vay vốn với lãi suất tốt nhất</span>
+                </li>
+                <li>
+                    <span data-lang="cz">Pomůžeme vám získat nejvýhodnější hypoteční i spotřebitelský úvěr a vyřídit státní příspěvek na opravu bydlení až do výše 1,5 milionu korun</span>
+                    <span data-lang="vn">Hỗ trợ làm hồ sơ xin trợ cấp sửa chữa nhà ở tại Séc lên đến 1,5 triệu korun.</span>
+                </li>
+                <li>
+                    <span data-lang="cz">Investice, pojištění, spotřebitelské úvěry a doplňkové penzijní spoření</span>
+                    <span data-lang="vn">Các dịch vụ đầu tư, bảo hiểm, tín dụng tiêu dùng và tiết kiệm hưu trí bổ sung</span>
+                </li>
+                <li>
+                    <span data-lang="cz">Komplexní poradenství při finančních transakcích mezi Vietnamem a ČR – výhodné kurzy, bezpečný převod, doložení původu peněz</span>
+                    <span data-lang="vn">Tư vấn toàn diện về giao dịch tài chính giữa Việt Nam và Séc: từ việc mua bán ngoại tệ chính thống với giá tốt, thực hiện chuyển tiền, cho đến hoàn tất hồ sơ giải trình nguồn gốc để đầu tư hoặc mua bất động sản</span>
+                </li>
+                <li>
+                    <span data-lang="cz">Právní a podnikatelské poradenství – nákup, prodej, fúze a likvidace firem</span>
+                    <span data-lang="vn">Cung cấp dịch vụ tư vấn pháp lý và kinh doanh trọn gói: từ mua lại, sáp nhập, chuyển nhượng cho đến giải thể doanh nghiệp</span>
+                </li>
+            </ul>
+        </section>
 
-<label data-lang="vn">Số tiền ban đầu (EUR):</label>
-<label data-lang="cz">Počáteční investice (EUR):</label>
-<input type="number" id="initial" value="6000"><br><br>
+        <hr>
 
-<label data-lang="vn">Lãi suất hàng năm (%):</label>
-<label data-lang="cz">Roční úroková sazba (%):</label>
-<input type="number" id="rate" value="9"><br><br>
+        <div class="calculator-section">
+            <h2 data-lang="vn">Bảng tính tiết kiệm và đầu tư</h2>
+            <h2 data-lang="cz">Kalkulačka spoření/investic</h2>
+            
+            <table id="tableInvestment">
+                <tbody>
+                    <tr class="input-row">
+                        <td data-lang="vn">Số tiền ban đầu (EUR):</td>
+                        <td data-lang="cz" style="display:none">Počáteční investice (EUR):</td>
+                        <td><input type="number" id="initial" value="6000"></td>
+                    </tr>
+                    <tr class="input-row">
+                        <td data-lang="vn">Lãi suất hàng năm (%):</td>
+                        <td data-lang="cz" style="display:none">Roční úroková sazba (%):</td>
+                        <td><input type="number" id="rate" value="9"></td>
+                    </tr>
+                    <tr class="input-row">
+                        <td data-lang="vn">Số năm đầu tư:</td>
+                        <td data-lang="cz" style="display:none">Doba investice (roky):</td>
+                        <td><input type="number" id="years" value="25"></td>
+                    </tr>
+                    <tr class="input-row">
+                        <td data-lang="vn">Đầu tư thêm hàng tháng (EUR):</td>
+                        <td data-lang="cz" style="display:none">Měsíční příspěvek (EUR):</td>
+                        <td><input type="number" id="monthly" value="600"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><button onclick="calculateInvestment()" data-lang="vn">Tính toán</button><button onclick="calculateInvestment()" data-lang="cz" style="display:none">Spočítat</button></td>
+                    </tr>
+                    <tr class="result-row" style="display:none;">
+                        <td data-lang="vn">Tổng số tháng:</td>
+                        <td data-lang="cz" style="display:none">Celkem měsíců:</td>
+                        <td id="totalMonthsInv" style="text-align: right;"></td>
+                    </tr>
+                    <tr class="result-row" style="display:none;">
+                        <td data-lang="vn">Vốn tích lũy:</td>
+                        <td data-lang="cz" style="display:none">Naspořená částka:</td>
+                        <td id="totalPrincipalInv" style="text-align: right;"></td>
+                    </tr>
+                    <tr class="result-row" style="display:none;">
+                        <td data-lang="vn">Tổng lãi:</td>
+                        <td data-lang="cz" style="display:none">Celkový úrok:</td>
+                        <td id="totalInterestInv" style="text-align: right;"></td>
+                    </tr>
+                    <tr class="result-row" style="display:none;">
+                        <td data-lang="vn">Tổng cộng:</td>
+                        <td data-lang="cz" style="display:none">Celkem:</td>
+                        <td id="totalAmountInv" style="text-align: right;"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-<label data-lang="vn">Số năm đầu tư:</label>
-<label data-lang="cz">Doba investice (roky):</label>
-<input type="number" id="years" value="25"><br><br>
+        <hr>
 
-<label data-lang="vn">Đầu tư thêm hàng tháng (EUR):</label>
-<label data-lang="cz">Měsíční příspěvek (EUR):</label>
-<input type="number" id="monthly" value="600"><br><br>
+        <div class="calculator-section">
+            <h2 data-lang="vn">Bảng tính vay thế chấp mua nhà</h2>
+            <h2 data-lang="cz">Kalkulačka hypotéky</h2>
+            
+            <table id="amortTable">
+                <tbody>
+                    <tr class="input-row">
+                        <td data-lang="vn">Giá trị bất động sản (Kč):</td>
+                        <td data-lang="cz" style="display:none">Cena nemovitosti (Kč):</td>
+                        <td><input type="number" id="price" step="50000" value="5000000"></td>
+                    </tr>
+                    <tr class="input-row">
+                        <td data-lang="vn">Vốn tự có (Kč):</td>
+                        <td data-lang="cz" style="display:none">Vlastní zdroje (Kč):</td>
+                        <td><input type="number" id="ownSource" step="50000" value="1000000"></td>
+                    </tr>
+                    <tr class="input-row">
+                        <td data-lang="vn">Số tiền vay (Kč):</td>
+                        <td data-lang="cz" style="display:none">Hypoteční částka (Kč):</td>
+                        <td><input type="number" id="loanAmount" readonly></td>
+                    </tr>
+                    <tr class="input-row">
+                        <td data-lang="vn">Lãi suất (% năm):</td>
+                        <td data-lang="cz" style="display:none">Úroková sazba (% p.a.):</td>
+                        <td><input type="number" id="interest" step="0.01" value="4.5"></td>
+                    </tr>
+                    <tr class="input-row">
+                        <td data-lang="vn">Thời hạn vay (năm):</td>
+                        <td data-lang="cz" style="display:none">Délka úvěru (roky):</td>
+                        <td><input type="number" id="yearsHypo" value="25"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><button onclick="calculateHypo()">Tính toán / Spočítat</button></td>
+                    </tr>
+                    <tr class="result-row" style="display:none;">
+                        <td data-lang="vn">Tổng số tháng:</td>
+                        <td data-lang="cz" style="display:none">Celkem měsíců:</td>
+                        <td id="totalMonthsHypo" style="text-align: right;"></td>
+                    </tr>
+                    <tr class="result-row" style="display:none;">
+                        <td data-lang="vn">Khoản trả hàng tháng:</td>
+                        <td data-lang="cz" style="display:none">Měsíční splátka:</td>
+                        <td id="monthlyPaymentHypo" style="text-align: right;"></td>
+                    </tr>
+                    <tr class="result-row" style="display:none;">
+                        <td data-lang="vn">Tổng khoản trả:</td>
+                        <td data-lang="cz" style="display:none">Celkem splátek:</td>
+                        <td id="totalPaymentsHypo" style="text-align: right;"></td>
+                    </tr>
+                    <tr class="result-row" style="display:none;">
+                        <td data-lang="vn">Tổng lãi vay:</td>
+                        <td data-lang="cz" style="display:none">Celkový úrok:</td>
+                        <td id="totalInterestHypo" style="text-align: right;"></td>
+                    </tr>
+                    <tr class="result-row" style="display:none;">
+                        <td data-lang="vn">Tổng gốc đã trả:</td>
+                        <td data-lang="cz" style="display:none">Celková jistina:</td>
+                        <td id="totalPrincipalHypo" style="text-align: right;"></td>
+                    </tr>
+                    <tr class="result-row" style="display:none;">
+                        <td data-lang="vn">Dư nợ cuối kỳ:</td>
+                        <td data-lang="cz" style="display:none">Zůstatek na konci:</td>
+                        <td id="balanceHypo" style="text-align: right;"></td>
+                    </tr>
+                    <tr class="result-row" style="display:none;">
+                        <td data-lang="vn">Thu nhập ròng hàng tháng nên lớn hơn:</td>
+                        <td data-lang="cz" style="display:none">Čistý měsíční příjem by měl být větší než:</td>
+                        <td id="minNetIncomeHypo" style="text-align: right;"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-<button onclick="calculate()" data-lang="vn">Tính toán</button>
-<button onclick="calculate()" data-lang="cz">Spočítat</button>
-
-<h3 data-lang="vn">Kết quả:</h3>
-<h3 data-lang="cz">Výsledek:</h3>
-<p id="result"></p>
-
-<script>
-function formatNumberEU(number) {
-  return number.toLocaleString('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-}
-
-function calculate() {
-  let P = parseFloat(document.getElementById("initial").value);
-  let r = parseFloat(document.getElementById("rate").value) / 100 / 12;
-  let n = parseInt(document.getElementById("years").value) * 12;
-  let m = parseFloat(document.getElementById("monthly").value);
-
-  let total = P * Math.pow(1 + r, n);
-  for (let i = 1; i <= n; i++) {
-    total += m * Math.pow(1 + r, n - i);
-  }
-
-  let totalPrincipal = P + m * n;
-  let totalInterest = total - totalPrincipal;
-
-  let resultText = `
-<b>Tiếng Việt:</b><br>
-Tổng tiền tiết kiệm (gốc + đóng góp): ${formatNumberEU(totalPrincipal)} EUR<br>
-Tổng tiền lãi: ${formatNumberEU(totalInterest)} EUR<br>
-Tổng cộng (gốc + lãi): ${formatNumberEU(total)} EUR<br><br>
-
-<b>Čeština:</b><br>
-Celková úspora (vklad + příspěvky): ${formatNumberEU(totalPrincipal)} EUR<br>
-Celkový úrok: ${formatNumberEU(totalInterest)} EUR<br>
-Celkem (vklad + úrok): ${formatNumberEU(total)} EUR
-`;
-
-  document.getElementById("result").innerHTML = resultText;
-}
-</script>
         <section>
             <h2 data-lang="cz">Kontakt</h2>
             <h2 data-lang="vn">Liên hệ</h2>
@@ -195,7 +283,7 @@ Celkem (vklad + úrok): ${formatNumberEU(total)} EUR
             <h2 data-lang="vn">Văn phòng</h2>
             <p data-lang="cz">5. patro, vedle restaurace Đông Đô – OC SAPA, Praha 4</p>
             <p data-lang="vn">Tầng 5, đối diện Ivo, toà nhà cạnh nhà hàng Đông Đô – Trung tâm SAPA, Praha 4</p>
-<iframe title="Embedded Google Map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2420.929219720558!2d14.464626411732283!3d50.00169491945519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b912303bb8fc3%3A0xa057b93346dc5ccf!2sIng.%20Pham%20Minh%20Tu%20Reality!5e1!3m2!1scs!2scz!4v1751403321631!5m2!1scs!2scz" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe title="Embedded Google Map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2420.929219720558!2d14.464626411732283!3d50.00169491945519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b912303bb8fc3%3A0xa057b93346dc5ccf!2sIng.%20Pham%20Minh%20Tu%20Reality!5e1!3m2!1scs!2scz!4v1751403321631!5m2!1scs!2scz" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </section>
 
         <section>
@@ -203,66 +291,117 @@ Celkem (vklad + úrok): ${formatNumberEU(total)} EUR
             <h2 data-lang="vn">🔗 Mã QR để liên hệ nhanh</h2>
             <p data-lang="cz">Naskenujte pro uložení kontaktů do telefonu.</p>
             <p data-lang="vn">Quét mã QR để lưu thông tin liên hệ vào điện thoại của bạn.</p>
-<img src="https://nnmm.cz/static/img/qrtu.png" alt="QR kód" 
-     style="display:block; margin:20px auto; width:150px; height:150px; border:2px solid red; border-radius:8px;" />
+            <img src="https://nnmm.cz/static/img/qrtu.png" alt="QR kód" 
+                 style="display:block; margin:20px auto; width:150px; height:150px; border:2px solid red; border-radius:8px;" />
         </section>
     </main>
 
-<footer>
-    <p><strong>MINH TU PHAM, IČO: 66473721</strong></p>
-    <p>Sídlo: Praha, Česká republika</p>
-    <p>&copy; 2025 Všechna práva vyhrazena</p>
+    <footer>
+        <p><strong>MINH TU PHAM, IČO: 66473721</strong></p>
+        <p>Sídlo: Praha, Česká republika</p>
+        <p>© 2025 Všechna práva vyhrazena</p>
+        <hr style="margin:20px auto; max-width:400px; border:0; border-top:1px solid #ccc;" />
+        <div style="font-size: 0.85em; text-align: left; max-width: 800px; margin: 0 auto; color: #555;">
+            <p data-lang="cz"><strong>Právní informace:</strong></p>
+            <p data-lang="cz">
+                Investiční služby, zprostředkování pojištění, spotřebitelských úvěrů a doplňkového penzijního spoření uvedené na tomto webu
+                jsou poskytovány na základě registrace vázaného zástupce Minh Tu Pham, IČO 66473721,
+                registrovaného pod samostatným zprostředkovatelem BEplan finanční plánování s.r.o., IČO 05779944,
+                v příslušných registrech České národní banky.
+            </p>
+            <p data-lang="vn"><strong>Thông tin pháp lý:</strong></p>
+            <p data-lang="vn">
+                Các dịch vụ đầu tư, bảo hiểm, tín dụng tiêu dùng và tiết kiệm hưu trí bổ sung được đề cập trên trang web này
+                được cung cấp dưới tên đại lý liên kết Minh Tu Pham, IČO 66473721,
+                đã đăng ký dưới công ty môi giới độc lập BEplan finanční plánování s.r.o., IČO 05779944,
+                trong hệ thống đăng ký của Ngân hàng Quốc gia Séc.
+            </p>
+        </div>
+    </footer>
 
-    <hr style="margin:20px auto; max-width:400px; border:0; border-top:1px solid #ccc;" />
-
-    <div style="font-size: 0.85em; text-align: left; max-width: 800px; margin: 0 auto; color: #555;">
-        <p data-lang="cz"><strong>Právní informace:</strong></p>
-        <p data-lang="cz">
-            Investiční služby, zprostředkování pojištění, spotřebitelských úvěrů a doplňkového penzijního spoření uvedené na tomto webu
-            jsou poskytovány na základě registrace vázaného zástupce Minh Tu Pham, IČO 66473721,
-            registrovaného pod samostatným zprostředkovatelem BEplan finanční plánování s.r.o., IČO 05779944,
-            v příslušných registrech České národní banky.
-        </p>
-
-        <p data-lang="vn"><strong>Thông tin pháp lý:</strong></p>
-        <p data-lang="vn">
-            Các dịch vụ đầu tư, bảo hiểm, tín dụng tiêu dùng và tiết kiệm hưu trí bổ sung được đề cập trên trang web này
-            được cung cấp dưới tên đại lý liên kết Minh Tu Pham, IČO 66473721,
-            đã đăng ký dưới công ty môi giới độc lập BEplan finanční plánování s.r.o., IČO 05779944,
-            trong hệ thống đăng ký của Ngân hàng Quốc gia Séc.
-        </p>
-    </div>
-</footer>
     <script>
+        function formatNumber(number, currency) {
+            const formatted = number.toLocaleString('cs-CZ', {
+                style: 'decimal',
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2,
+                useGrouping: true,
+                notation: 'standard'
+            });
+            return `${formatted} ${currency}`;
+        }
+        
         function setLanguage(lang) {
             document.querySelectorAll('[data-lang]').forEach(el => {
-                if (el.dataset.lang === lang) {
-                    el.classList.add('active');
-                    if (window.getComputedStyle(el).display === 'none') {
-                        el.style.display = 'block';
-                    }
-                } else {
-                    el.classList.remove('active');
-                    el.style.display = 'none';
-                }
+                el.style.display = el.getAttribute('data-lang') === lang ? 'block' : 'none';
             });
-
-            document.querySelectorAll('.service-list li').forEach(li => {
-                const czSpan = li.querySelector('[data-lang="cz"]');
-                const vnSpan = li.querySelector('[data-lang="vn"]');
-                if (lang === 'cz') {
-                    if(czSpan) czSpan.style.display = 'inline';
-                    if(vnSpan) vnSpan.style.display = 'none';
-                } else {
-                    if(czSpan) czSpan.style.display = 'none';
-                    if(vnSpan) vnSpan.style.display = 'inline';
-                }
-            });
-
             document.getElementById('btn-cz').classList.toggle('active', lang === 'cz');
             document.getElementById('btn-vn').classList.toggle('active', lang === 'vn');
             localStorage.setItem('preferredLang', lang);
             document.documentElement.lang = lang === 'vn' ? 'vi' : 'cs';
+        }
+
+        // Bảng tính tiết kiệm và đầu tư đã sửa
+        function calculateInvestment() {
+            const P = parseFloat(document.getElementById("initial").value);
+            const r = parseFloat(document.getElementById("rate").value) / 100 / 12;
+            const n = parseInt(document.getElementById("years").value) * 12;
+            const m = parseFloat(document.getElementById("monthly").value);
+        
+            let total = P;
+            let totalPrincipal = P;
+        
+            for (let i = 1; i <= n; i++) {
+                total = total * (1 + r) + m;
+                totalPrincipal += m;
+            }
+            const totalInterest = total - totalPrincipal;
+
+            document.getElementById("totalMonthsInv").innerHTML = `<strong>${n}</strong> ${document.documentElement.lang === 'vi' ? 'tháng' : 'měsíců'}`;
+            document.getElementById("totalPrincipalInv").innerHTML = `<strong>${formatNumber(totalPrincipal, 'EUR')}</strong>`;
+            document.getElementById("totalInterestInv").innerHTML = `<strong>${formatNumber(totalInterest, 'EUR')}</strong>`;
+            document.getElementById("totalAmountInv").innerHTML = `<strong>${formatNumber(total, 'EUR')}</strong>`;
+        
+            document.querySelectorAll('#tableInvestment .result-row').forEach(row => row.style.display = 'table-row');
+        }
+        
+        // Bảng tính vay thế chấp đã sửa
+        function calculateHypo() {
+            const price = parseFloat(document.getElementById('price').value);
+            const own = parseFloat(document.getElementById('ownSource').value);
+            const years = parseInt(document.getElementById('yearsHypo').value);
+            const interest = parseFloat(document.getElementById('interest').value) / 100;
+            const months = years * 12;
+            const loan = price - own;
+            document.getElementById('loanAmount').value = loan;
+        
+            const monthlyRate = interest / 12;
+            const monthlyPayment = monthlyRate === 0 ? loan / months : loan * (monthlyRate * Math.pow(1 + monthlyRate, months)) / (Math.pow(1 + monthlyRate, months) - 1);
+            
+            let totalInterest = 0;
+            let totalPrincipal = 0;
+            let balance = loan;
+
+            for (let i = 1; i <= months; i++) {
+                const interestPayment = balance * monthlyRate;
+                const principalPayment = monthlyPayment - interestPayment;
+                balance -= principalPayment;
+                totalInterest += interestPayment;
+                totalPrincipal += principalPayment;
+            }
+            
+            // Tính toán thu nhập ròng tối thiểu dựa trên DSTI 45%
+            const minNetIncome = monthlyPayment / 0.45;
+
+            document.getElementById("totalMonthsHypo").innerHTML = `<strong>${months}</strong> ${document.documentElement.lang === 'vi' ? 'tháng' : 'měsíců'}`;
+            document.getElementById("monthlyPaymentHypo").innerHTML = `<strong>${formatNumber(monthlyPayment, 'Kč')}</strong>`;
+            document.getElementById("totalPaymentsHypo").innerHTML = `<strong>${formatNumber(monthlyPayment * months, 'Kč')}</strong>`;
+            document.getElementById("totalInterestHypo").innerHTML = `<strong>${formatNumber(totalInterest, 'Kč')}</strong>`;
+            document.getElementById("totalPrincipalHypo").innerHTML = `<strong>${formatNumber(loan, 'Kč')}</strong>`;
+            document.getElementById("balanceHypo").innerHTML = `<strong>${formatNumber(balance > 0 ? balance : 0, 'Kč')}</strong>`;
+            document.getElementById("minNetIncomeHypo").innerHTML = `<strong>${formatNumber(minNetIncome, 'Kč')}</strong>`;
+        
+            document.querySelectorAll('#amortTable .result-row').forEach(row => row.style.display = 'table-row');
         }
 
         document.addEventListener('DOMContentLoaded', () => {
