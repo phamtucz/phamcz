@@ -202,7 +202,6 @@
                         <td data-lang="vn">DSTI (Tỷ lệ trả nợ trên thu nhập tháng):</td><td data-lang="cz">DSTI (Poměr splátek k příjmu):</td>
                         <td id="dstiResult"></td>
                     </tr>
-<<<<<<< HEAD
                     <tr class="result-row" style="display:none; vertical-align: middle; text-align: left;">
                         <td data-lang="vn" style="padding: 8px;">
                             <p class="navy-text" style="margin: 0; font-family: Arial, sans-serif; font-size: 14px;">
@@ -215,11 +214,10 @@
                             </p>
                         </td>
                         <td id="minNetIncomeHypo" style="text-align: right; padding: 8px; font-family: Arial, sans-serif; font-size: 14px;"></td>
-=======
                     <tr class="result-row">
                         <td data-lang="vn">DTI (Hệ số tổng nợ trên thu nhập năm):</td><td data-lang="cz">DTI (Poměr dluhu k ročnímu příjmu):</td>
                         <td id="dtiResult"></td>
->>>>>>> 2ee137337cdf2ba6eae5f867c47dad57aea0be0d
+
                     </tr>
                 </tbody>
             </table>
@@ -313,10 +311,6 @@
         
             document.querySelectorAll('#tableInvestment .result-row').forEach(row => row.style.display = 'table-row');
         }
-        
-        // Bảng tính vay thế chấp đã sửa
-=======
->>>>>>> 2ee137337cdf2ba6eae5f867c47dad57aea0be0d
         function calculateHypo() {
             // Lấy dữ liệu đầu vào
             const price = parseFloat(document.getElementById('price').value) || 0;
@@ -355,7 +349,6 @@
             // Cập nhật giao diện
             document.getElementById("totalRecognizedIncome").innerHTML = `<strong>${formatNumber(totalRecognizedIncome, 'Kč')}</strong>`;
             document.getElementById("monthlyPaymentHypo").innerHTML = `<strong>${formatNumber(monthlyPayment, 'Kč')}</strong>`;
-<<<<<<< HEAD
             document.getElementById("totalPaymentsHypo").innerHTML = `<strong>${formatNumber(monthlyPayment * months, 'Kč')}</strong>`;
             document.getElementById("totalInterestHypo").innerHTML = `<strong>${formatNumber(totalInterest, 'Kč')}</strong>`;
             document.getElementById("totalPrincipalHypo").innerHTML = `<strong>${formatNumber(loan, 'Kč')}</strong>`;
@@ -364,7 +357,7 @@
             document.getElementById("minNetIncomeHypo").innerHTML = `<span class="navy-text"><strong>${formatNumber(minNetIncome, 'Kč')}</strong></span>`;
         
             document.querySelectorAll('#amortTable .result-row').forEach(row => row.style.display = 'table-row');
-=======
+
 
             const ltvCell = document.getElementById("ltvResult");
             ltvCell.innerHTML = `<strong>${formatNumber(ltv, '%')}</strong>`;
@@ -379,7 +372,6 @@
             const dtiCell = document.getElementById("dtiResult");
             dtiCell.innerHTML = `<strong>${formatNumber(dti, '')}</strong>`;
             dtiCell.style.color = dti <= 8.5 ? 'green' : 'red';
->>>>>>> 2ee137337cdf2ba6eae5f867c47dad57aea0be0d
         }
 
         document.addEventListener('DOMContentLoaded', () => {
