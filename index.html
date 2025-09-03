@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8" />
@@ -11,6 +10,11 @@
     <link rel="icon" href="https://pham.cz/static/img/favicon-96x96.png" type="image/png" />
     <link rel="apple-touch-icon" href="https://pham.cz/static/img/apple-touch-icon.png" />
     <link rel="manifest" href="https://pham.cz/static/img/site.webmanifest" />
+
+    <!-- === THÊM VÀO BỞI GEMINI: Thư viện cho giao diện mới === -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <!-- === KẾT THÚC PHẦN THÊM VÀO === -->
 
     <script type="application/ld+json">
     {
@@ -57,8 +61,12 @@
         .lang-switcher button { font-size: 1em; padding: 8px 14px; margin: 4px; border: 1px solid #ccc; border-radius: 5px; background-color: #f0f0f0; cursor: pointer; transition: background-color 0.3s, color 0.3s; }
         .lang-switcher button.active { background-color: var(--primary-color); color: white; border-color: var(--primary-color); }
         .container { max-width: 800px; margin: 20px auto; background: white; padding: 25px; box-shadow: 0 2px 15px rgba(0,0,0,0.1); border-radius: 10px; }
-        h1 { text-align: center; color: var(--secondary-color); }
-        h2 { color: var(--primary-color); margin-top: 30px; border-bottom: 2px solid #f0f0f0; padding-bottom: 5px; }
+        
+        /* === CẬP NHẬT BỞI GEMINI: Chữ to và đậm hơn === */
+        h1 { text-align: center; color: var(--secondary-color); font-size: 1.8em; font-weight: 700; }
+        h2 { color: var(--primary-color); margin-top: 30px; border-bottom: 2px solid #f0f0f0; padding-bottom: 5px; font-size: 1.6em; font-weight: 700; }
+        /* === KẾT THÚC CẬP NHẬT === */
+
         .profile-img { width: 150px; height: 150px; object-fit: cover; border-radius: 50%; border: 4px solid var(--secondary-color); margin: 0 auto 20px; display: block; }
         ul { padding-left: 20px; list-style-type: '✓ '; }
         .qr-code { display: block; margin: 20px auto; max-width: 200px; border-radius: 8px; border: 1px solid #ccc; }
@@ -79,11 +87,15 @@
         .calculator-section th, .calculator-section td { padding: 10px; border: 1px solid #ddd; text-align: right; }
         .calculator-section th { background-color: #f2f2f2; text-align: left; }
         .calculator-section table input[type="number"] { width: 100%; border: none; text-align: right; padding: 0; margin: 0; }
-        /* Dòng dưới đây đã được thay đổi: đã xóa 'font-weight: bold;' */
         .calculator-section table .result-row { }
         .calculator-section table .input-row td:first-child { text-align: left; }
         .calculator-section table .input-row td:last-child { padding: 0; }
         .calculator-section table .input-row input { display: block; width: 100%; border: none; box-sizing: border-box; text-align: right; padding: 10px; }
+        
+        /* Style cho phần dịch vụ mới */
+        #new-services-section {
+            font-family: 'Inter', sans-serif;
+        }
     </style>
 </head>
 <body>
@@ -112,32 +124,72 @@
         <section>
             <h2 data-lang="cz">Služby</h2>
             <h2 data-lang="vn">Dịch vụ</h2>
-            <ul>
-                <li>
-                    <span data-lang="cz">Prodej a pronájem nemovitostí</span>
-                    <span data-lang="vn">Mua bán và cho thuê bất động sản</span>
-                </li>
-                <li>
-                    <span data-lang="cz">Finanční poradenství a investiční strategie šité na míru vietnamské komunitě</span>
-                    <span data-lang="vn">Thiết kế các giải pháp tài chính và kênh đầu tư dành riêng cho người Việt. <br>💼 Tích lũy – đầu tư – bảo vệ – vay vốn với lãi suất tốt nhất</span>
-                </li>
-                <li>
-                    <span data-lang="cz">Pomůžeme vám získat nejvýhodnější hypoteční i spotřebitelský úvěr a vyřídit státní příspěvek na opravu bydlení až do výše 1,5 milionu korun</span>
-                    <span data-lang="vn">Hỗ trợ làm hồ sơ xin trợ cấp sửa chữa nhà ở tại Séc lên đến 1,5 triệu korun.</span>
-                </li>
-                <li>
-                    <span data-lang="cz">Investice, pojištění, spotřebitelské úvěry a doplňkové penzijní spoření</span>
-                    <span data-lang="vn">Các dịch vụ đầu tư, bảo hiểm, tín dụng tiêu dùng và tiết kiệm hưu trí bổ sung</span>
-                </li>
-                <li>
-                    <span data-lang="cz">Komplexní poradenství při finančních transakcích mezi Vietnamem a ČR – výhodné kurzy, bezpečný převod, doložení původu peněz</span>
-                    <span data-lang="vn">Tư vấn toàn diện về giao dịch tài chính giữa Việt Nam và Séc: từ việc mua bán ngoại tệ chính thống với giá tốt, thực hiện chuyển tiền, cho đến hoàn tất hồ sơ giải trình nguồn gốc để đầu tư hoặc mua bất động sản</span>
-                </li>
-                <li>
-                    <span data-lang="cz">Právní a podnikatelské poradenství – nákup, prodej, fúze a likvidace firem</span>
-                    <span data-lang="vn">Cung cấp dịch vụ tư vấn pháp lý và kinh doanh trọn gói: từ mua lại, sáp nhập, chuyển nhượng cho đến giải thể doanh nghiệp</span>
-                </li>
-            </ul>
+
+            <!-- === BẮT ĐẦU PHẦN DỊCH VỤ MỚI === -->
+            <div id="new-services-section" class="py-8">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Service 1: Real Estate -->
+                    <div class="bg-slate-50 p-6 rounded-lg border border-slate-200">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-full bg-yellow-500 text-white mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2">
+                            <span data-lang="cz">Dům & Nemovitosti</span>
+                            <span data-lang="vn">Nhà Cửa & Đất Đai</span>
+                        </h3>
+                        <p class="text-slate-600 text-sm">
+                            <span data-lang="cz">Odborná podpora od A do Z při nákupu, prodeji nebo pronájmu. Zvláště vám pomůžeme s vyřízením žádosti o dotaci na opravu až do <strong>1,5 milionu korun</strong>.</span>
+                            <span data-lang="vn">Chuyên gia hỗ trợ bạn từ A-Z trong việc mua, bán, hoặc cho thuê. Đặc biệt, hỗ trợ làm hồ sơ xin trợ cấp sửa nhà lên đến <strong>1,5 triệu korun</strong>.</span>
+                        </p>
+                    </div>
+
+                    <!-- Service 2: Investment -->
+                    <div class="bg-slate-50 p-6 rounded-lg border border-slate-200">
+                       <div class="flex items-center justify-center h-12 w-12 rounded-full bg-yellow-500 text-white mb-4">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2">
+                            <span data-lang="cz">Investice & Spoření</span>
+                            <span data-lang="vn">Đầu Tư & Tích Lũy</span>
+                        </h3>
+                        <p class="text-slate-600 text-sm">
+                             <span data-lang="cz">Navrhujeme finanční řešení "šité na míru", která vám pomohou akumulovat kapitál, investovat se ziskem a chránit majetek. Nabízíme úvěry s nejlepšími úroky.</span>
+                            <span data-lang="vn">Thiết kế giải pháp tài chính "đo ni đóng giày", giúp bạn tích lũy, đầu tư sinh lời và bảo vệ tài sản. Cung cấp các gói vay vốn lãi suất tốt nhất.</span>
+                        </p>
+                    </div>
+
+                    <!-- Service 3: Insurance -->
+                    <div class="bg-slate-50 p-6 rounded-lg border border-slate-200">
+                         <div class="flex items-center justify-center h-12 w-12 rounded-full bg-yellow-500 text-white mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2">
+                            <span data-lang="cz">Pojištění & Důchod</span>
+                            <span data-lang="vn">Bảo Hiểm & Hưu Trí</span>
+                        </h3>
+                        <p class="text-slate-600 text-sm">
+                            <span data-lang="cz">Poskytujeme kompletní škálu produktů od pojištění, spotřebitelských úvěrů až po penzijní spoření, abychom zajistili pevnou budoucnost pro vás a vaši rodinu.</span>
+                            <span data-lang="vn">Cung cấp đầy đủ các sản phẩm từ bảo hiểm, tín dụng tiêu dùng đến tiết kiệm hưu trí, đảm bảo một tương lai vững chắc cho bạn và gia đình.</span>
+                        </p>
+                    </div>
+
+                    <!-- Service 4: Legal -->
+                    <div class="bg-slate-50 p-6 rounded-lg border border-slate-200">
+                       <div class="flex items-center justify-center h-12 w-12 rounded-full bg-yellow-500 text-white mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2">
+                            <span data-lang="cz">Podnikové Poradenství</span>
+                            <span data-lang="vn">Tư Vấn Doanh Nghiệp</span>
+                        </h3>
+                        <p class="text-slate-600 text-sm">
+                            <span data-lang="cz">Doprovázíme vaši firmu ve všech fázích: od založení, přes fúze a akvizice až po složité právní záležitosti.</span>
+                            <span data-lang="vn">Đồng hành cùng doanh nghiệp trong mọi giai đoạn: từ thành lập, mua bán, sáp nhập cho đến các vấn đề pháp lý phức tạp khác.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- === KẾT THÚC PHẦN DỊCH VỤ MỚI === -->
         </section>
 
         <hr>
@@ -289,7 +341,9 @@
             <h2 data-lang="vn">Văn phòng</h2>
             <p data-lang="cz">5. patro, v budově vedle restaurace Đông Đô, areál Sapa, Praha 4.</p>
             <p data-lang="vn">Tầng 5, đối diện Ivo, toà nhà cạnh nhà hàng Đông Đô – Trung tâm SAPA, Praha 4</p>
-            <iframe title="Embedded Google Map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2563.360667049074!2d14.47051431571618!3d50.02425897941862!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b925345266175%3A0x2d82958a364112e!2zVEAgVEjGr8agTkcgTsmKSQ!5e0!3m2!1scs!2scz!4v1663162886365!5m2!1scs!2scz" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <!-- === CẬP NHẬT BỞI GEMINI: Link bản đồ mới === -->
+            <iframe title="Embedded Google Map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10253.442668383377!2d14.472704!3d50.024259!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b925345266175%3A0x2d82958a364112e!2sRestaurace%20%C4%90%C3%B4ng%20%C4%90%C3%B4!5e0!3m2!1sen!2scz!4v1725391515234!5m2!1sen!2scz" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <!-- === KẾT THÚC CẬP NHẬT === -->
         </section>
 
         <section>
@@ -339,7 +393,14 @@
         
         function setLanguage(lang) {
             document.querySelectorAll('[data-lang]').forEach(el => {
-                el.style.display = el.getAttribute('data-lang') === lang ? 'block' : 'none';
+                // Sử dụng class thay vì style để linh hoạt hơn
+                if (el.getAttribute('data-lang') === lang) {
+                    el.style.display = 'block';
+                    el.classList.add('active');
+                } else {
+                    el.style.display = 'none';
+                    el.classList.remove('active');
+                }
             });
             document.getElementById('btn-cz').classList.toggle('active', lang === 'cz');
             document.getElementById('btn-vn').classList.toggle('active', lang === 'vn');
