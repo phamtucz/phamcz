@@ -155,7 +155,7 @@
                 <tbody>
                     <tr class="input-row">
                         <td data-lang="vn">Số tiền ban đầu (EUR):</td>
-                        <td data-lang="cz" style="display:none">Počáteční investice (EUR):</td>
+                        <td data-lang="cz">Počáteční investice (EUR):</td>
                         <td><input type="number" id="initial" value="6000"></td>
                     </tr>
                     <tr class="input-row">
@@ -233,13 +233,18 @@
                         <td data-lang="cz" style="display:none">Délka úvěru (roky):</td>
                         <td><input type="number" id="yearsHypo" value="25"></td>
                     </tr>
+                    <tr class="input-row">
+                        <td data-lang="vn">Tính dư nợ sau (năm):</td>
+                        <td data-lang="cz" style="display:none">Zůstatek po (letech):</td>
+                        <td><input type="number" id="yearsForBalance" value="5"></td>
+                    </tr>
                     <tr>
                         <td colspan="3"><button onclick="calculateHypo()">Tính toán / Spočítat</button></td>
                     </tr>
                     <tr class="result-row" style="display:none;">
-                        <td data-lang="vn">Tổng số tháng:</td>
-                        <td data-lang="cz" style="display:none">Celkem měsíců:</td>
-                        <td id="totalMonthsHypo" style="text-align: right;"></td>
+                        <td data-lang="vn">LTV (%):</td>
+                        <td data-lang="cz" style="display:none">LTV (%):</td>
+                        <td id="ltvHypo" style="text-align: right;"></td>
                     </tr>
                     <tr class="result-row" style="display:none;">
                         <td data-lang="vn">Khoản trả hàng tháng:</td>
@@ -257,13 +262,13 @@
                         <td id="totalInterestHypo" style="text-align: right;"></td>
                     </tr>
                     <tr class="result-row" style="display:none;">
-                        <td data-lang="vn">Tổng gốc đã trả:</td>
-                        <td data-lang="cz" style="display:none">Celková jistina:</td>
-                        <td id="totalPrincipalHypo" style="text-align: right;"></td>
+                        <td data-lang="vn">Tiết kiệm thuế (ước tính):</td>
+                        <td data-lang="cz" style="display:none">Daňová úspora (odhad):</td>
+                        <td id="taxSavingHypo" style="text-align: right;"></td>
                     </tr>
                     <tr class="result-row" style="display:none;">
-                        <td data-lang="vn">Dư nợ cuối kỳ:</td>
-                        <td data-lang="cz" style="display:none">Zůstatek na konci:</td>
+                        <td data-lang="vn">Dư nợ sau <span id="balanceYearsLabelVn"></span> năm:</td>
+                        <td data-lang="cz" style="display:none">Zůstatek po <span id="balanceYearsLabelCz"></span> letech:</td>
                         <td id="balanceHypo" style="text-align: right;"></td>
                     </tr>
                     <tr class="result-row" style="display:none; vertical-align: middle; text-align: left;">
@@ -297,7 +302,7 @@
             <h2 data-lang="vn">Văn phòng</h2>
             <p data-lang="cz">5. patro, vedle restaurace Đông Đô – OC SAPA, Praha 4</p>
             <p data-lang="vn">Tầng 5, đối diện Ivo, toà nhà cạnh nhà hàng Đông Đô – Trung tâm SAPA, Praha 4</p>
-            <iframe title="Embedded Google Map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2420.929219720558!2d14.464626411732283!3d50.00169491945519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b912303bb8fc3%3A0xa057b93346dc5ccf!2sIng.%20Pham%20Minh%20Tu%20Reality!5e1!3m2!1scs!2scz!4v1751403321631!5m2!1scs!2scz" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe title="Embedded Google Map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2563.360667049074!2d14.47051431571618!3d50.02425897941862!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b925345266175%3A0x2d82958a364112e!2zVEAgVEjGr8agTkcgTsmKSQ!5e0!3m2!1scs!2scz!4v1663162886365!5m2!1scs!2scz" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </section>
 
         <section>
@@ -355,7 +360,6 @@
             document.documentElement.lang = lang === 'vn' ? 'vi' : 'cs';
         }
 
-        // Bảng tính tiết kiệm và đầu tư đã sửa
         function calculateInvestment() {
             const P = parseFloat(document.getElementById("initial").value);
             const r = parseFloat(document.getElementById("rate").value) / 100 / 12;
@@ -380,12 +384,13 @@
             document.querySelectorAll('#tableInvestment .result-row').forEach(row => row.style.display = 'table-row');
         }
         
-        // Bảng tính vay thế chấp đã sửa
         function calculateHypo() {
             const price = parseFloat(document.getElementById('price').value);
             const own = parseFloat(document.getElementById('ownSource').value);
             const years = parseInt(document.getElementById('yearsHypo').value);
             const interest = parseFloat(document.getElementById('interest').value) / 100;
+            const yearsForBalance = parseInt(document.getElementById('yearsForBalance').value);
+            
             const months = years * 12;
             const loan = price - own;
             document.getElementById('loanAmount').value = loan;
@@ -394,28 +399,46 @@
             const monthlyPayment = monthlyRate === 0 ? loan / months : loan * (monthlyRate * Math.pow(1 + monthlyRate, months)) / (Math.pow(1 + monthlyRate, months) - 1);
             
             let totalInterest = 0;
-            let totalPrincipal = 0;
             let balance = loan;
+            let balanceAfterX = loan;
+            const paymentsMadeForBalance = yearsForBalance * 12;
 
             for (let i = 1; i <= months; i++) {
                 const interestPayment = balance * monthlyRate;
                 const principalPayment = monthlyPayment - interestPayment;
                 balance -= principalPayment;
                 totalInterest += interestPayment;
-                totalPrincipal += principalPayment;
+
+                if (i === paymentsMadeForBalance) {
+                    balanceAfterX = balance;
+                }
+            }
+             if (paymentsMadeForBalance >= months) {
+                balanceAfterX = balance; // Should be near 0
             }
             
-            // Tính toán thu nhập ròng tối thiểu dựa trên DSTI 45%
             const minNetIncome = monthlyPayment / 0.45;
+            const taxSaving = totalInterest * 0.15;
+            const ltv = (loan / price) * 100;
 
-            document.getElementById("totalMonthsHypo").innerHTML = `<strong>${months}</strong> ${document.documentElement.lang === 'vi' ? 'tháng' : 'měsíců'}`;
+            document.getElementById("ltvHypo").innerHTML = `<strong>${ltv.toFixed(2)} %</strong>`;
             document.getElementById("monthlyPaymentHypo").innerHTML = `<strong>${formatNumber(monthlyPayment, 'Kč')}</strong>`;
             document.getElementById("totalPaymentsHypo").innerHTML = `<strong>${formatNumber(monthlyPayment * months, 'Kč')}</strong>`;
             document.getElementById("totalInterestHypo").innerHTML = `<strong>${formatNumber(totalInterest, 'Kč')}</strong>`;
+<<<<<<< HEAD
             document.getElementById("totalPrincipalHypo").innerHTML = `<strong>${formatNumber(loan, 'Kč')}</strong>`;
             document.getElementById("balanceHypo").innerHTML = `<strong>${formatNumber(balance > 0 ? balance : 0, 'Kč')}</strong>`;
             // DÒNG ĐÃ SỬA
             document.getElementById("minNetIncomeHypo").innerHTML = `<span class="navy-text"><strong>${formatNumber(minNetIncome, 'Kč')}</strong></span>`;
+=======
+            document.getElementById("taxSavingHypo").innerHTML = `<strong>${formatNumber(taxSaving, 'Kč')}</strong>`;
+            
+            document.getElementById("balanceYearsLabelVn").innerText = yearsForBalance;
+            document.getElementById("balanceYearsLabelCz").innerText = yearsForBalance;
+            document.getElementById("balanceHypo").innerHTML = `<strong>${formatNumber(balanceAfterX > 0 ? balanceAfterX : 0, 'Kč')}</strong>`;
+            
+            document.getElementById("minNetIncomeHypo").innerHTML = `<strong>${formatNumber(minNetIncome, 'Kč')}</strong>`;
+>>>>>>> 2ee137337cdf2ba6eae5f867c47dad57aea0be0d
         
             document.querySelectorAll('#amortTable .result-row').forEach(row => row.style.display = 'table-row');
         }
