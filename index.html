@@ -19,7 +19,7 @@
         "name": "Ing. Minh Tu Pham",
         "image": "https://nnmm.cz/static/img/1tu.jpg",
         "telephone": "+420778081986",
-        "email Reality": "tu.pham@kwcz.cz", "email Finance": "minhtu.pham@beplan.cz"
+        "email Reality": "tu.pham@kwcz.cz", "email Finance": "minhtu.pham@beplan.cz",
         "url": "https://www.nnmm.cz",
         "address": {
             "@type": "PostalAddress",
@@ -83,6 +83,12 @@
         .calculator-section table .input-row td:first-child { text-align: left; }
         .calculator-section table .input-row td:last-child { padding: 0; }
         .calculator-section table .input-row input { display: block; width: 100%; border: none; box-sizing: border-box; text-align: right; padding: 10px; }
+
+        /* --- MÃ CSS ĐÃ THÊM --- */
+        .navy-text {
+            color: navy;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -260,10 +266,18 @@
                         <td data-lang="cz" style="display:none">Zůstatek na konci:</td>
                         <td id="balanceHypo" style="text-align: right;"></td>
                     </tr>
-                    <tr class="result-row" style="display:none;">
-                        <td data-lang="vn">Thu nhập ròng hàng tháng nên lớn hơn:</td>
-                        <td data-lang="cz" style="display:none">Čistý měsíční příjem by měl být větší než:</td>
-                        <td id="minNetIncomeHypo" style="text-align: right;"></td>
+                    <tr class="result-row" style="display:none; vertical-align: middle; text-align: left;">
+                        <td data-lang="vn" style="padding: 8px;">
+                            <p class="navy-text" style="margin: 0; font-family: Arial, sans-serif; font-size: 14px;">
+                                Để được vay khoản này, nhiều khả năng ngân hàng sẽ yêu cầu bạn chứng minh rằng mình có mức thu nhập hàng tháng cao hơn:
+                            </p>
+                        </td>
+                        <td data-lang="cz" style="padding: 8px;">
+                            <p class="navy-text" style="margin: 0; font-family: Arial, sans-serif; font-size: 14px;">
+                                Aby bylo možné získat tento úvěr, je velmi pravděpodobné, že banka bude požadovat doložení vyššího měsíčního příjmu:
+                            </p>
+                        </td>
+                        <td id="minNetIncomeHypo" style="text-align: right; padding: 8px; font-family: Arial, sans-serif; font-size: 14px;"></td>
                     </tr>
                 </tbody>
             </table>
@@ -360,7 +374,8 @@
             document.getElementById("totalMonthsInv").innerHTML = `<strong>${n}</strong> ${document.documentElement.lang === 'vi' ? 'tháng' : 'měsíců'}`;
             document.getElementById("totalPrincipalInv").innerHTML = `<strong>${formatNumber(totalPrincipal, 'EUR')}</strong>`;
             document.getElementById("totalInterestInv").innerHTML = `<strong>${formatNumber(totalInterest, 'EUR')}</strong>`;
-            document.getElementById("totalAmountInv").innerHTML = `<strong>${formatNumber(total, 'EUR')}</strong>`;
+            // DÒNG ĐÃ SỬA
+            document.getElementById("totalAmountInv").innerHTML = `<span class="navy-text"><strong>${formatNumber(total, 'EUR')}</strong></span>`;
         
             document.querySelectorAll('#tableInvestment .result-row').forEach(row => row.style.display = 'table-row');
         }
@@ -399,7 +414,8 @@
             document.getElementById("totalInterestHypo").innerHTML = `<strong>${formatNumber(totalInterest, 'Kč')}</strong>`;
             document.getElementById("totalPrincipalHypo").innerHTML = `<strong>${formatNumber(loan, 'Kč')}</strong>`;
             document.getElementById("balanceHypo").innerHTML = `<strong>${formatNumber(balance > 0 ? balance : 0, 'Kč')}</strong>`;
-            document.getElementById("minNetIncomeHypo").innerHTML = `<strong>${formatNumber(minNetIncome, 'Kč')}</strong>`;
+            // DÒNG ĐÃ SỬA
+            document.getElementById("minNetIncomeHypo").innerHTML = `<span class="navy-text"><strong>${formatNumber(minNetIncome, 'Kč')}</strong></span>`;
         
             document.querySelectorAll('#amortTable .result-row').forEach(row => row.style.display = 'table-row');
         }
