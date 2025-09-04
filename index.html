@@ -60,21 +60,33 @@
         .lang-switcher button.active { background-color: var(--primary-color); color: white; border-color: var(--primary-color); }
         .container { max-width: 800px; margin: 20px auto; background: white; padding: 25px; box-shadow: 0 2px 15px rgba(0,0,0,0.1); border-radius: 10px; }
         
-        /* ===  Chữ to và đậm hơn === */
-h1 { text-align: center; color: var(--secondary-color); }
-        h2 { color: var(--primary-color); margin-top: 30px; border-bottom: 2px solid #f0f0f0; padding-bottom: 5px; }
-        /* === KẾT THÚC CẬP NHẬT === */
+        /* === START: KÍCH THƯỚC CHỮ ĐÃ ĐƯỢC CẬP NHẬT === */
+        h1 { text-align: center; color: var(--secondary-color); font-size: 2.5em; font-weight: 700; }
+        /* === END: KÍCH THƯỚC CHỮ ĐÃ ĐƯỢC CẬP NHẬT === */
+
+        h2 { color: var(--primary-color); margin-top: 30px; border-bottom: 2px solid #f0f0f0; padding-bottom: 5px; font-size: 1.8em; font-weight: 700; }
 
         .profile-img { width: 150px; height: 150px; object-fit: cover; border-radius: 50%; border: 4px solid var(--secondary-color); margin: 0 auto 20px; display: block; }
         ul { padding-left: 20px; list-style-type: '✓ '; }
         .qr-code { display: block; margin: 20px auto; max-width: 200px; border-radius: 8px; border: 1px solid #ccc; }
         footer { text-align: center; font-size: 0.9em; color: #666; margin-top: 40px; padding: 20px 0; border-top: 1px solid #eee; }
         footer p { margin: 5px 0; }
+        
+        footer .footer-links a {
+            color: var(--primary-color);
+            font-weight: bold;
+            text-decoration: underline;
+            padding: 2px 5px;
+            transition: color 0.3s;
+        }
+        footer .footer-links a:hover {
+            color: var(--secondary-color);
+        }
+
         [data-lang] { display: none; }
         [data-lang].active { display: block; }
         .service-list li { margin-bottom: 10px; }
         
-        /* Cập nhật style cho bảng tính */
         .calculator-section { margin-top: 2rem; padding: 1rem; border: 1px solid #ddd; border-radius: 8px; }
         .calculator-section h3 { margin-top: 0; }
         .calculator-section label, .calculator-section input, .calculator-section button { display: block; width: 100%; box-sizing: border-box; margin-bottom: 0.5rem; }
@@ -90,7 +102,6 @@ h1 { text-align: center; color: var(--secondary-color); }
         .calculator-section table .input-row td:last-child { padding: 0; }
         .calculator-section table .input-row input { display: block; width: 100%; border: none; box-sizing: border-box; text-align: right; padding: 10px; }
         
-        /* Style cho phần dịch vụ mới */
         #new-services-section {
             font-family: 'Inter', sans-serif;
         }
@@ -182,7 +193,7 @@ h1 { text-align: center; color: var(--secondary-color); }
                     </div>
                 </div>
             </div>
-            </section>
+        </section>
 
         <hr>
 
@@ -334,7 +345,7 @@ h1 { text-align: center; color: var(--secondary-color); }
             <p data-lang="cz">5. patro, v budově vedle restaurace Đông Đô, areál Sapa, Praha 4.</p>
             <p data-lang="vn">Tầng 5, đối diện Ivo, toà nhà cạnh nhà hàng Đông Đô – Trung tâm SAPA, Praha 4</p>
             <iframe title="Ing. Minh Tu Pham, Reality" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10253.442668383377!2d14.472704!3d50.024259!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b925345266175%3A0x2d82958a364112e!2sRestaurace%20%C4%90%C3%B4ng%20%C4%90%C3%B4!5e0!3m2!1sen!2scz!4v1725391515234!5m2!1sen!2scz" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </section>
+        </section>
 
         <section>
             <h2 data-lang="cz">🔗 QR kód pro rychlý kontakt</h2>
@@ -349,15 +360,19 @@ h1 { text-align: center; color: var(--secondary-color); }
     <footer>
         <p><strong>MINH TU PHAM, IČO: 66473721</strong></p>
         <p>Sídlo: Praha, Česká republika</p>
-        <p>
-             <a href="dictionary.html" data-lang="vn">Từ điển tài chính</a>
-             <a href="dictionary.html" data-lang="cz" style="display:none;">Finanční slovník</a>
-             |
-             <a href="index1.html" data-lang="vn">Phiên bản cũ</a>
-             <a href="index1.html" data-lang="cz" style="display:none;">Starší verze</a>
+        
+        <p class="footer-links" style="font-size: 1.1em; margin: 15px 0;">
+             <span data-lang="vn">
+                <a href="dictionary.html">Từ điển tài chính</a> | <a href="index1.html">Phiên bản cũ</a>
+             </span>
+             <span data-lang="cz" style="display:none;">
+                <a href="dictionary.html">Finanční slovník</a> | <a href="index1.html">Starší verze</a>
+             </span>
         </p>
+
         <p>© 2025 Všechna práva vyhrazena</p>
         <hr style="margin:20px auto; max-width:400px; border:0; border-top:1px solid #ccc;" />
+        
         <div style="font-size: 0.85em; text-align: left; max-width: 800px; margin: 0 auto; color: #555; padding: 0 25px; box-sizing: border-box;">
             <p data-lang="cz"><strong>Právní informace:</strong></p>
             <p data-lang="cz">
@@ -374,7 +389,7 @@ h1 { text-align: center; color: var(--secondary-color); }
                 trong hệ thống đăng ký của Ngân hàng Quốc gia Séc.
             </p>
         </div>
-        </footer>
+    </footer>
 
     <script>
         function formatNumber(number, currency) {
@@ -390,7 +405,6 @@ h1 { text-align: center; color: var(--secondary-color); }
         
         function setLanguage(lang) {
             document.querySelectorAll('[data-lang]').forEach(el => {
-                // Sử dụng class thay vì style để linh hoạt hơn
                 if (el.getAttribute('data-lang') === lang) {
                     el.style.display = 'block';
                     el.classList.add('active');
