@@ -93,7 +93,7 @@
         .calculator-section table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
         .calculator-section th, .calculator-section td { padding: 10px; border: 1px solid #ddd; text-align: right; }
         .calculator-section th { background-color: #f2f2f2; text-align: left; }
-        .calculator-section table input[type="number"] { width: 100%; border: none; text-align: right; padding: 0; margin: 0; }
+        .calculator-section table input { width: 100%; border: none; text-align: right; padding: 0; margin: 0; }
         .calculator-section table .input-row td:first-child { text-align: left; }
         .calculator-section table .input-row td:last-child { padding: 0; }
         .calculator-section table .input-row input { display: block; width: 100%; border: none; box-sizing: border-box; text-align: right; padding: 10px; }
@@ -213,7 +213,7 @@
                     <tr class="input-row">
                         <td data-lang="vn">Số tiền ban đầu (EUR):</td>
                         <td data-lang="cz">Počáteční investice (EUR):</td>
-                        <td><input type="number" id="initial" value="6000"></td>
+                        <td><input type="text" inputmode="numeric" id="initial" value="6 000"></td>
                     </tr>
                     <tr class="input-row">
                         <td data-lang="vn">Lãi suất hàng năm (%):</td>
@@ -228,7 +228,7 @@
                     <tr class="input-row">
                         <td data-lang="vn">Đầu tư thêm hàng tháng (EUR):</td>
                         <td data-lang="cz" style="display:none">Měsíční příspěvek (EUR):</td>
-                        <td><input type="number" id="monthly" value="600"></td>
+                        <td><input type="text" inputmode="numeric" id="monthly" value="600"></td>
                     </tr>
                     <tr>
                         <td colspan="3"><button onclick="calculateInvestment()" data-lang="vn">Tính toán</button><button onclick="calculateInvestment()" data-lang="cz" style="display:none">Spočítat</button></td>
@@ -268,17 +268,17 @@
                     <tr class="input-row">
                         <td data-lang="vn">Giá trị bất động sản (Kč):</td>
                         <td data-lang="cz" style="display:none">Cena nemovitosti (Kč):</td>
-                        <td><input type="number" id="price" step="50000" value="5000000"></td>
+                        <td><input type="text" inputmode="numeric" id="price" value="5 000 000"></td>
                     </tr>
                     <tr class="input-row">
                         <td data-lang="vn">Vốn tự có (Kč):</td>
                         <td data-lang="cz" style="display:none">Vlastní zdroje (Kč):</td>
-                        <td><input type="number" id="ownSource" step="50000" value="1000000"></td>
+                        <td><input type="text" inputmode="numeric" id="ownSource" value="1 000 000"></td>
                     </tr>
                     <tr class="input-row">
                         <td data-lang="vn">Số tiền vay (Kč):</td>
                         <td data-lang="cz" style="display:none">Hypoteční částka (Kč):</td>
-                        <td><input type="number" id="loanAmount" readonly></td>
+                        <td><input type="text" id="loanAmount" readonly></td>
                     </tr>
                     <tr class="input-row">
                         <td data-lang="vn">Lãi suất (% năm):</td>
@@ -348,12 +348,12 @@
                     <tr class="input-row">
                         <td data-lang="vn">Số tiền mục tiêu (Kč):</td>
                         <td data-lang="cz">Cílová částka (Kč):</td>
-                        <td><input type="number" id="targetAmount" value="1000000"></td>
+                        <td><input type="text" inputmode="numeric" id="targetAmount" value="1 000 000"></td>
                     </tr>
                     <tr class="input-row">
                         <td data-lang="vn">Số tiền có ban đầu (Kč):</td>
                         <td data-lang="cz">Počáteční vklad (Kč):</td>
-                        <td><input type="number" id="targetInitialAmount" value="50000"></td>
+                        <td><input type="text" inputmode="numeric" id="targetInitialAmount" value="50 000"></td>
                     </tr>
                      <tr class="input-row">
                         <td data-lang="vn">Số năm tiết kiệm:</td>
@@ -379,7 +379,7 @@
 
         <section>
             <h2 data-lang="cz" style="font-size: 1.4em; font-weight: 600; margin-top: 10px;">Kontakt</h2>
-            <h2 data-lang="vn" style="font-size: 1.4em; font-weight: 600; margin-top: 10px;"> Liên hệ</h2>
+            <h2 data-lang="vn">Liên hệ</h2>
             <p><strong>Tel:</strong> <a href="tel:+420778081986">+420 778 081 986</a></p>
             <p><strong>Email Reality:</strong> <a href="mailto:tu.pham@kwcz.cz">tu.pham@kwcz.cz</a></p>
             <p><strong>Email Finance:</strong> <a href="mailto:minhtu.pham@beplan.cz">minhtu.pham@beplan.cz</a></p>
@@ -388,7 +388,7 @@
 
         <section>
             <h2 data-lang="cz" style="font-size: 1.4em; font-weight: 600; margin-top: 10px;">Kancelář</h2>
-            <h2 data-lang="vn" style="font-size: 1.4em; font-weight: 600; margin-top: 10px;">Văn phòng</h2>
+            <h2 data-lang="vn">Văn phòng</h2>
             <p data-lang="cz">5. patro, v budově vedle restaurace Đông Đô, areál Sapa, Praha 4.</p>
             <p data-lang="vn">Tầng 5, đối diện Ivo, toà nhà cạnh nhà hàng Đông Đô – Trung tâm SAPA, Praha 4</p>
             <iframe title="Ing. Minh Tu Pham, Reality" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2563.304033142749!2d14.4449852159654!3d50.02488482941857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b927a4d555555%3A0xc394a5040e3a6285!2zxJDDtG5nIMSQw7QgUmVzdGF1cmFudA!5e0!3m2!1svi!2scz!4v1678886400000!5m2!1svi!2scz" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -439,13 +439,35 @@
     </footer>
 
     <script>
+        // ----- CÁC HÀM HỖ TRỢ ĐỊNH DẠNG SỐ MỚI -----
+        function unformatNumber(value) {
+            if (!value) return '';
+            return value.toString().replace(/\s/g, '');
+        }
+
+        function formatNumberInput(inputElement) {
+            let value = inputElement.value;
+            let originalCursorPos = inputElement.selectionStart;
+
+            // Loại bỏ ký tự không phải số
+            let cleanValue = unformatNumber(value);
+            if (cleanValue.length === 0) return;
+
+            // Định dạng lại số
+            let formattedValue = parseInt(cleanValue, 10).toLocaleString('cs-CZ').replace(/\./g, ' ');
+
+            // Cập nhật giá trị và vị trí con trỏ
+            inputElement.value = formattedValue;
+            let newCursorPos = originalCursorPos + (formattedValue.length - value.length);
+            inputElement.setSelectionRange(newCursorPos, newCursorPos);
+        }
+
+        // ----- HÀM TÍNH TOÁN CHÍNH -----
         function formatNumber(number, currency) {
             const formatted = number.toLocaleString('cs-CZ', {
                 style: 'decimal',
                 minimumFractionDigits: 2,
                 maximumFractionDigits: 2,
-                useGrouping: true,
-                notation: 'standard'
             });
             return `${formatted} ${currency}`;
         }
@@ -467,10 +489,10 @@
         }
 
         function calculateInvestment() {
-            const P = parseFloat(document.getElementById("initial").value);
+            const P = parseFloat(unformatNumber(document.getElementById("initial").value));
             const r = parseFloat(document.getElementById("rate").value) / 100 / 12;
             const n = parseInt(document.getElementById("years").value) * 12;
-            const m = parseFloat(document.getElementById("monthly").value);
+            const m = parseFloat(unformatNumber(document.getElementById("monthly").value));
         
             let total = P;
             let totalPrincipal = P;
@@ -490,15 +512,15 @@
         }
         
         function calculateHypo() {
-            const price = parseFloat(document.getElementById('price').value);
-            const own = parseFloat(document.getElementById('ownSource').value);
+            const price = parseFloat(unformatNumber(document.getElementById('price').value));
+            const own = parseFloat(unformatNumber(document.getElementById('ownSource').value));
             const years = parseInt(document.getElementById('yearsHypo').value);
             const interest = parseFloat(document.getElementById('interest').value) / 100;
             const yearsForBalance = parseInt(document.getElementById('yearsForBalance').value);
             
             const months = years * 12;
             const loan = price - own;
-            document.getElementById('loanAmount').value = loan;
+            document.getElementById('loanAmount').value = loan.toLocaleString('cs-CZ').replace(/\./g, ' ');
         
             const monthlyRate = interest / 12;
             const monthlyPayment = monthlyRate === 0 ? loan / months : loan * (monthlyRate * Math.pow(1 + monthlyRate, months)) / (Math.pow(1 + monthlyRate, months) - 1);
@@ -519,7 +541,7 @@
                 }
             }
              if (paymentsMadeForBalance >= months) {
-                balanceAfterX = balance; // Should be near 0
+                balanceAfterX = balance;
             }
             
             const minNetIncome = monthlyPayment / 0.45;
@@ -541,10 +563,9 @@
             document.querySelectorAll('#amortTable .result-row').forEach(row => row.style.display = 'table-row');
         }
 
-        // HÀM CHO BẢNG TÍNH 3 (ĐÃ CẬP NHẬT)
         function calculateTargetSavings() {
-            const P = parseFloat(document.getElementById("targetAmount").value);
-            const C = parseFloat(document.getElementById("targetInitialAmount").value) || 0; // Lấy giá trị tiền có ban đầu
+            const P = parseFloat(unformatNumber(document.getElementById("targetAmount").value));
+            const C = parseFloat(unformatNumber(document.getElementById("targetInitialAmount").value)) || 0;
             const years = parseFloat(document.getElementById("targetYears").value);
             const r = parseFloat(document.getElementById("targetRate").value) / 100;
             
@@ -556,10 +577,7 @@
             const n = years * 12;
             const monthlyRate = r / 12;
 
-            // Tính giá trị tương lai của số tiền ban đầu
             const futureValueOfC = C * Math.pow(1 + monthlyRate, n);
-            
-            // Số tiền mục tiêu còn lại cần đạt được từ tiết kiệm hàng tháng
             const remainingP = P - futureValueOfC;
             
             let monthlyPayment;
@@ -567,13 +585,11 @@
             const lang = document.documentElement.lang;
 
             if (remainingP <= 0) {
-                // Nếu số tiền ban đầu đã đủ để đạt mục tiêu
                 monthlyPayment = 0;
                 resultText = lang === 'vi' 
                     ? 'Số tiền ban đầu của bạn đã đủ để đạt được mục tiêu. Bạn không cần tiết kiệm thêm.' 
                     : 'Váš počáteční vklad je dostatečný k dosažení cíle. Není třeba dále spořit.';
             } else {
-                // Tính số tiền cần tiết kiệm hàng tháng cho phần còn lại
                 if (monthlyRate === 0) {
                     monthlyPayment = remainingP / n;
                 } else {
@@ -588,17 +604,29 @@
         }
 
         document.addEventListener('DOMContentLoaded', () => {
+            // ----- THIẾT LẬP NGÔN NGỮ -----
             const savedLang = localStorage.getItem('preferredLang');
             const browserLang = navigator.language.split('-')[0];
             
-            let initialLang = 'vn'; // Mặc định là tiếng Việt
+            let initialLang = 'vn';
             if (savedLang) {
                 initialLang = savedLang;
             } else if (browserLang === 'cs') {
                 initialLang = 'cz';
             }
-            
             setLanguage(initialLang);
+
+            // ----- GẮN SỰ KIỆN ĐỊNH DẠNG SỐ -----
+            const inputsToFormat = ['initial', 'monthly', 'price', 'ownSource', 'targetAmount', 'targetInitialAmount'];
+            inputsToFormat.forEach(id => {
+                const input = document.getElementById(id);
+                if (input) {
+                    // Định dạng giá trị ban đầu khi tải trang
+                    formatNumberInput(input);
+                    // Thêm sự kiện để tự định dạng khi người dùng nhập
+                    input.addEventListener('input', () => formatNumberInput(input));
+                }
+            });
         });
     </script>
 
