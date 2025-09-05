@@ -350,6 +350,11 @@
                         <td data-lang="cz">Cílová částka (Kč):</td>
                         <td><input type="number" id="targetAmount" value="1000000"></td>
                     </tr>
+                    <tr class="input-row">
+                        <td data-lang="vn">Số tiền có ban đầu (Kč):</td>
+                        <td data-lang="cz">Počáteční vklad (Kč):</td>
+                        <td><input type="number" id="targetInitialAmount" value="50000"></td>
+                    </tr>
                      <tr class="input-row">
                         <td data-lang="vn">Số năm tiết kiệm:</td>
                         <td data-lang="cz">Počet let spoření:</td>
@@ -374,7 +379,7 @@
 
         <section>
             <h2 data-lang="cz" style="font-size: 1.4em; font-weight: 600; margin-top: 10px;">Kontakt</h2>
-            <h2 data-lang="vn">Liên hệ</h2>
+            <h2 data-lang="vn" style="font-size: 1.4em; font-weight: 600; margin-top: 10px;"> Liên hệ</h2>
             <p><strong>Tel:</strong> <a href="tel:+420778081986">+420 778 081 986</a></p>
             <p><strong>Email Reality:</strong> <a href="mailto:tu.pham@kwcz.cz">tu.pham@kwcz.cz</a></p>
             <p><strong>Email Finance:</strong> <a href="mailto:minhtu.pham@beplan.cz">minhtu.pham@beplan.cz</a></p>
@@ -383,7 +388,7 @@
 
         <section>
             <h2 data-lang="cz" style="font-size: 1.4em; font-weight: 600; margin-top: 10px;">Kancelář</h2>
-            <h2 data-lang="vn">Văn phòng</h2>
+            <h2 data-lang="vn" style="font-size: 1.4em; font-weight: 600; margin-top: 10px;">Văn phòng</h2>
             <p data-lang="cz">5. patro, v budově vedle restaurace Đông Đô, areál Sapa, Praha 4.</p>
             <p data-lang="vn">Tầng 5, đối diện Ivo, toà nhà cạnh nhà hàng Đông Đô – Trung tâm SAPA, Praha 4</p>
             <iframe title="Ing. Minh Tu Pham, Reality" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2563.304033142749!2d14.4449852159654!3d50.02488482941857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b927a4d555555%3A0xc394a5040e3a6285!2zxJDDtG5nIMSQw7QgUmVzdGF1cmFudA!5e0!3m2!1svi!2scz!4v1678886400000!5m2!1svi!2scz" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -536,9 +541,10 @@
             document.querySelectorAll('#amortTable .result-row').forEach(row => row.style.display = 'table-row');
         }
 
-        // HÀM MỚI CHO BẢNG TÍNH 3
+        // HÀM CHO BẢNG TÍNH 3 (ĐÃ CẬP NHẬT)
         function calculateTargetSavings() {
             const P = parseFloat(document.getElementById("targetAmount").value);
+            const C = parseFloat(document.getElementById("targetInitialAmount").value) || 0; // Lấy giá trị tiền có ban đầu
             const years = parseFloat(document.getElementById("targetYears").value);
             const r = parseFloat(document.getElementById("targetRate").value) / 100;
             
@@ -549,22 +555,35 @@
             
             const n = years * 12;
             const monthlyRate = r / 12;
+
+            // Tính giá trị tương lai của số tiền ban đầu
+            const futureValueOfC = C * Math.pow(1 + monthlyRate, n);
+            
+            // Số tiền mục tiêu còn lại cần đạt được từ tiết kiệm hàng tháng
+            const remainingP = P - futureValueOfC;
             
             let monthlyPayment;
-            if (monthlyRate === 0) {
-                monthlyPayment = P / n;
-            } else {
-                 monthlyPayment = P * monthlyRate / (Math.pow(1 + monthlyRate, n) - 1);
-            }
-            
+            let resultText;
             const lang = document.documentElement.lang;
-            const resultText = lang === 'vi' 
-                ? 'Cần tiết kiệm mỗi tháng: ' 
-                : 'Potřebná měsíční úspora: ';
-            
-            const formattedResult = formatNumber(monthlyPayment, 'Kč');
 
-            document.getElementById("targetResult").innerHTML = `<strong>${resultText}${formattedResult}</strong>`;
+            if (remainingP <= 0) {
+                // Nếu số tiền ban đầu đã đủ để đạt mục tiêu
+                monthlyPayment = 0;
+                resultText = lang === 'vi' 
+                    ? 'Số tiền ban đầu của bạn đã đủ để đạt được mục tiêu. Bạn không cần tiết kiệm thêm.' 
+                    : 'Váš počáteční vklad je dostatečný k dosažení cíle. Není třeba dále spořit.';
+            } else {
+                // Tính số tiền cần tiết kiệm hàng tháng cho phần còn lại
+                if (monthlyRate === 0) {
+                    monthlyPayment = remainingP / n;
+                } else {
+                     monthlyPayment = remainingP * monthlyRate / (Math.pow(1 + monthlyRate, n) - 1);
+                }
+                const formattedResult = formatNumber(monthlyPayment, 'Kč');
+                resultText = (lang === 'vi' ? 'Cần tiết kiệm mỗi tháng: ' : 'Potřebná měsíční úspora: ') + `<strong>${formattedResult}</strong>`;
+            }
+
+            document.getElementById("targetResult").innerHTML = resultText;
             document.querySelector('#tableTargetSavings .result-row').style.display = 'table-row';
         }
 
