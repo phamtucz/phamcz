@@ -331,58 +331,48 @@
 
         <hr>
 
-        <div class="calculator-section">
-            <h2 data-lang="vn" style="font-size: 1.4em; font-weight: 600; margin-top: 10px;">Bảng 1: Tính tiền tích lũy trong tương lai</h2>
-            <h2 data-lang="cz" style="font-size: 1.4em; font-weight: 600; margin-top: 10px;">Kalkulačka 1: Budoucí hodnota investice</h2>
-            
-            <table id="tableInvestment">
-                <tbody>
-                    <tr class="input-row">
-                        <td data-lang="vn">Số tiền ban đầu (EUR):</td>
-                        <td data-lang="cz">Počáteční investice (EUR):</td>
-                        <td><input type="text" inputmode="numeric" id="initial" value="6 000"></td>
-                    </tr>
-                    <tr class="input-row">
-                        <td data-lang="vn">Lãi suất hàng năm (%):</td>
-                        <td data-lang="cz" style="display:none">Roční úroková sazba (%):</td>
-                        <td><input type="number" id="rate" value="9"></td>
-                    </tr>
-                    <tr class="input-row">
-                        <td data-lang="vn">Số năm đầu tư:</td>
-                        <td data-lang="cz" style="display:none">Doba investice (roky):</td>
-                        <td><input type="number" id="years" value="25"></td>
-                    </tr>
-                    <tr class="input-row">
-                        <td data-lang="vn">Đầu tư thêm hàng tháng (EUR):</td>
-                        <td data-lang="cz" style="display:none">Měsíční příspěvek (EUR):</td>
-                        <td><input type="text" inputmode="numeric" id="monthly" value="600"></td>
-                    </tr>
-                    <tr>
-                        <td colspan="3"><button onclick="calculateInvestment()" data-lang="vn">Tính toán</button><button onclick="calculateInvestment()" data-lang="cz" style="display:none">Spočítat</button></td>
-                    </tr>
-                    <tr class="result-row" style="display:none;">
-                        <td data-lang="vn">Tổng số tháng:</td>
-                        <td data-lang="cz" style="display:none">Celkem měsíců:</td>
-                        <td id="totalMonthsInv" style="text-align: right;"></td>
-                    </tr>
-                    <tr class="result-row" style="display:none;">
-                        <td data-lang="vn">Vốn tích lũy:</td>
-                        <td data-lang="cz" style="display:none">Naspořená částka:</td>
-                        <td id="totalPrincipalInv" style="text-align: right;"></td>
-                    </tr>
-                    <tr class="result-row" style="display:none;">
-                        <td data-lang="vn">Tổng lãi:</td>
-                        <td data-lang="cz" style="display:none">Celkový úrok:</td>
-                        <td id="totalInterestInv" style="text-align: right;"></td>
-                    </tr>
-                    <tr class="result-row" style="display:none;">
-                        <td data-lang="vn">Tổng cộng:</td>
-                        <td data-lang="cz" style="display:none">Celkem:</td>
-                        <td id="totalAmountInv" style="text-align: right;"></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+<div class="calculator-section">
+                <h2 data-lang="vn" style="font-size: 1.4em; font-weight: 600; margin-top: 10px;">Bảng 1: Bảng tính Tăng trưởng Tài sản</h2>
+            <h2 data-lang="cz" style="font-size: 1.4em; font-weight: 600; margin-top: 10px;">Kalkulačka 1: Kalkulačka Růstu Majetku</h2>
+    <table>
+        <tbody>
+            <tr>
+                <td data-lang="cz">Počáteční vklad (Kč):</td>
+                <td data-lang="vn">Vốn ban đầu (Kč):</td>
+                <td><input type="number" id="initial" value="100000"></td>
+            </tr>
+            <tr>
+                <td data-lang="cz">Měsíční vklad (Kč):</td>
+                <td data-lang="vn">Gửi thêm hàng tháng (Kč):</td>
+                <td><input type="number" id="monthly" value="5000"></td>
+            </tr>
+            <tr>
+                <td data-lang="cz">Roční zhodnocení (%):</td>
+                <td data-lang="vn">Tăng trưởng hàng năm (%):</td> <td><input type="number" id="rate" value="8"></td>
+            </tr>
+            <tr>
+                <td data-lang="cz">Doba investice (roky):</td>
+                <td data-lang="vn">Số năm đầu tư:</td>
+                <td><input type="number" id="years" value="20"></td>
+            </tr>
+        </tbody>
+    </table>
+    <button onclick="calculateInvestment()" data-lang="cz">Spočítat růst</button> <button onclick="calculateInvestment()" data-lang="vn">Xem tăng trưởng</button> <table id="investmentResult" style="margin-top: 15px; display: none;">
+        <tbody>
+            <tr class="result-row">
+                <td data-lang="cz">Celkem vloženo:</td>
+                <td data-lang="vn">Tổng vốn đã góp:</td>
+                <td id="totalPrincipalInv"></td>
+            </tr>
+            <tr class="result-row">
+                <td data-lang="cz">Zisk z investice:</td> <td data-lang="vn">Lợi nhuận từ đầu tư:</td> <td id="totalInterestInv"></td>
+            </tr>
+            <tr class="result-row" style="font-size: 1.2em;">
+                <td data-lang="cz">Výsledný majetek:</td> <td data-lang="vn">Tổng tài sản tương lai:</td> <td id="totalAmountInv"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
         <hr>
 
