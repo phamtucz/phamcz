@@ -3,38 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pham.cz</title>
+    <title>Trang Chào Mừng Đa Ngôn Ngữ</title>
     <style>
+        /* CSS để trang web đẹp hơn */
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f5f5f7;
+            color: #1d1d1f;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             margin: 0;
-            background-color: #f7f7f7;
-            color: #333;
-            text-align: center;
+            padding: 20px;
         }
-        .welcome-container {
-            padding: 30px 40px;
-            border-radius: 8px;
+
+        .container {
             background-color: #ffffff;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            max-width: 700px;
+            width: 100%;
         }
-        .welcome-container p {
-            font-size: 1.25rem; /* 20px */
-            margin: 18px 0;
-            line-height: 1.5;
+
+        h1 {
+            text-align: center;
+            color: #0071e3;
+            margin-bottom: 30px;
+        }
+
+        .greeting {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .greeting:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .language-name {
+            font-weight: 600;
+            color: #6e6e73;
+            margin: 0 0 8px 0;
+        }
+
+        .sentence {
+            font-size: 1.2em;
+            color: #1d1d1f;
+            margin: 0;
         }
     </style>
 </head>
 <body>
 
-    <div class="welcome-container">
-        <p>Chào mừng bạn đã ghé thăm.</p>
-        <p>Vítejte na naší stránce.</p>
-        <p>Welcome to our page.</p>
+    <div class="container">
+        <h1>Lời Chào Mừng / Greetings</h1>
+
+        <div class="greeting">
+            <p class="language-name">Tiếng Việt:</p>
+            <p class="sentence">Chào mừng bạn đã ghé thăm.</p>
+        </div>
+
+        <div class="greeting">
+            <p class="language-name">Tiếng Séc:</p>
+            <p class="sentence">Vítejte na naší stránce.</p>
+        </div>
+
+        <div class="greeting">
+            <p class="language-name">Tiếng Anh:</p>
+            <p class="sentence">Welcome to our page.</p>
+        </div>
+
+        <div class="greeting">
+            <p class="language-name">Tiếng Đức:</p>
+            <p class="sentence">Willkommen auf unserer Seite.</p>
+        </div>
+
+        <div class="greeting">
+            <p class="language-name">Tiếng Pháp:</p>
+            <p class="sentence">Bienvenue sur notre page.</p>
+        </div>
+
+        <div class="greeting">
+            <p class="language-name">Tiếng Tây Ban Nha:</p>
+            <p class="sentence">Bienvenido a nuestra página.</p>
+        </div>
+
+        <div class="greeting">
+            <p class="language-name">Tiếng Trung Quốc (Giản thể):</p>
+            <p class="sentence">欢迎访问我们的页面。</p>
+        </div>
+
+        <div class="greeting">
+            <p class="language-name">Tiếng Trung Quốc (Phồn thể):</p>
+            <p class="sentence">歡迎訪問我們的頁面。</p>
+        </div>
+        
+        <div class="greeting">
+            <p class="language-name">Tiếng Nhật:</p>
+            <p class="sentence">私たちのページへようこそ。</p>
+        </div>
+
+        <div class="greeting">
+            <p class="language-name">Tiếng Hàn:</p>
+            <p class="sentence">저희 페이지에 오신 것을 환영합니다.</p>
+        </div>
+
+        <div class="greeting">
+            <p class="language-name">Tiếng Nga:</p>
+            <p class="sentence">Добро пожаловать на нашу страницу.</p>
+        </div>
+        
+        <div class="greeting">
+            <p class="language-name">Tiếng Ba Lan:</p>
+            <p class="sentence">Witamy na naszej stronie.</p>
+        </div>
+        
+        <div class="greeting">
+            <p class="language-name">Tiếng Bồ Đào Nha:</p>
+            <p class="sentence">Bem-vindo à nossa página.</p>
+        </div>
+
+        <div class="greeting">
+            <p class="language-name">Tiếng Ý:</p>
+            <p class="sentence">Benvenuti nella nostra pagina.</p>
+        </div>
+
     </div>
 
 </body>
