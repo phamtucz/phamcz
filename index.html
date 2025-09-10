@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang Chào Mừng Đa Ngôn Ngữ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
     <style>
         /* CSS để trang web đẹp hơn */
         body {
@@ -34,6 +35,8 @@
         }
 
         .greeting {
+            display: flex; /* Dùng flexbox để căn chỉnh cờ và chữ */
+            align-items: center; /* Căn giữa theo chiều dọc */
             margin-bottom: 20px;
             padding-bottom: 20px;
             border-bottom: 1px solid #e5e5e5;
@@ -45,10 +48,20 @@
             padding-bottom: 0;
         }
 
-        .language-name {
-            font-weight: 600;
-            color: #6e6e73;
-            margin: 0 0 8px 0;
+        .flag-icon {
+            font-size: 1.8em; /* Kích thước icon cờ */
+            margin-right: 12px; /* Khoảng cách giữa cờ và chữ */
+            min-width: 28px; /* Đảm bảo cờ có kích thước cố định */
+        }
+        
+        /* Đảm bảo chữ tiếng Trung và Nhật không bị xuống dòng khi có cờ */
+        .language-and-sentence {
+             display: flex;
+             flex-direction: column;
+        }
+
+        .language-name-hidden { /* Ẩn tên ngôn ngữ đi nếu muốn */
+            display: none; 
         }
 
         .sentence {
@@ -64,73 +77,97 @@
         <h1>Lời Chào Mừng / Greetings</h1>
 
         <div class="greeting">
-            <p class="language-name">Tiếng Việt:</p>
-            <p class="sentence">Chào mừng bạn đã ghé thăm.</p>
+            <span class="flag-icon flag-icon-vn"></span>
+            <div class="language-and-sentence">
+                <p class="sentence">Chào mừng bạn đã ghé thăm.</p>
+            </div>
         </div>
 
         <div class="greeting">
-            <p class="language-name">Tiếng Séc:</p>
-            <p class="sentence">Vítejte na naší stránce.</p>
+            <span class="flag-icon flag-icon-cz"></span>
+            <div class="language-and-sentence">
+                <p class="sentence">Vítejte na naší stránce.</p>
+            </div>
         </div>
 
         <div class="greeting">
-            <p class="language-name">Tiếng Anh:</p>
-            <p class="sentence">Welcome to our page.</p>
+            <span class="flag-icon flag-icon-gb"></span> <div class="language-and-sentence">
+                <p class="sentence">Welcome to our page.</p>
+            </div>
         </div>
 
         <div class="greeting">
-            <p class="language-name">Tiếng Đức:</p>
-            <p class="sentence">Willkommen auf unserer Seite.</p>
+            <span class="flag-icon flag-icon-de"></span>
+            <div class="language-and-sentence">
+                <p class="sentence">Willkommen auf unserer Seite.</p>
+            </div>
         </div>
 
         <div class="greeting">
-            <p class="language-name">Tiếng Pháp:</p>
-            <p class="sentence">Bienvenue sur notre page.</p>
+            <span class="flag-icon flag-icon-fr"></span>
+            <div class="language-and-sentence">
+                <p class="sentence">Bienvenue sur notre page.</p>
+            </div>
         </div>
 
         <div class="greeting">
-            <p class="language-name">Tiếng Tây Ban Nha:</p>
-            <p class="sentence">Bienvenido a nuestra página.</p>
+            <span class="flag-icon flag-icon-es"></span>
+            <div class="language-and-sentence">
+                <p class="sentence">Bienvenido a nuestra página.</p>
+            </div>
         </div>
 
         <div class="greeting">
-            <p class="language-name">Tiếng Trung Quốc (Giản thể):</p>
-            <p class="sentence">欢迎访问我们的页面。</p>
+            <span class="flag-icon flag-icon-cn"></span>
+            <div class="language-and-sentence">
+                <p class="sentence">欢迎访问我们的页面。</p>
+            </div>
         </div>
-
         <div class="greeting">
-            <p class="language-name">Tiếng Trung Quốc (Phồn thể):</p>
-            <p class="sentence">歡迎訪問我們的頁面。</p>
+            <span class="flag-icon flag-icon-tw"></span> <div class="language-and-sentence">
+                <p class="sentence">歡迎訪問我們的頁面。</p>
+            </div>
         </div>
         
         <div class="greeting">
-            <p class="language-name">Tiếng Nhật:</p>
-            <p class="sentence">私たちのページへようこそ。</p>
+            <span class="flag-icon flag-icon-jp"></span>
+            <div class="language-and-sentence">
+                <p class="sentence">私たちのページへようこそ。</p>
+            </div>
         </div>
 
         <div class="greeting">
-            <p class="language-name">Tiếng Hàn:</p>
-            <p class="sentence">저희 페이지에 오신 것을 환영합니다.</p>
+            <span class="flag-icon flag-icon-kr"></span>
+            <div class="language-and-sentence">
+                <p class="sentence">저희 페이지에 오신 것을 환영합니다.</p>
+            </div>
         </div>
 
         <div class="greeting">
-            <p class="language-name">Tiếng Nga:</p>
-            <p class="sentence">Добро пожаловать на нашу страницу.</p>
+            <span class="flag-icon flag-icon-ru"></span>
+            <div class="language-and-sentence">
+                <p class="sentence">Добро пожаловать на нашу страницу.</p>
+            </div>
         </div>
         
         <div class="greeting">
-            <p class="language-name">Tiếng Ba Lan:</p>
-            <p class="sentence">Witamy na naszej stronie.</p>
+            <span class="flag-icon flag-icon-pl"></span>
+            <div class="language-and-sentence">
+                <p class="sentence">Witamy na naszej stronie.</p>
+            </div>
         </div>
         
         <div class="greeting">
-            <p class="language-name">Tiếng Bồ Đào Nha:</p>
-            <p class="sentence">Bem-vindo à nossa página.</p>
+            <span class="flag-icon flag-icon-pt"></span> <div class="language-and-sentence">
+                <p class="sentence">Bem-vindo à nossa página.</p>
+            </div>
         </div>
 
         <div class="greeting">
-            <p class="language-name">Tiếng Ý:</p>
-            <p class="sentence">Benvenuti nella nostra pagina.</p>
+            <span class="flag-icon flag-icon-it"></span>
+            <div class="language-and-sentence">
+                <p class="sentence">Benvenuti nella nostra pagina.</p>
+            </div>
         </div>
 
     </div>
